@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<!--
+	Epilogue by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+
+<head>
+	<title>Dzień Dobry!</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script>
+		setIndexMenu();
+
+		var menuElements = [
+			{ menuName: "index_menu", title: "Dzień Dobry!", description: "Strona ta, zawiera kolekcję moich aplikacji i projektów", link: "index_content.html" },
+			{ menuName: "rebounce_menu", title: "ReBounce", description: "Skacz jak najdłużej!", link: "rebounce.html" },
+			{ menuName: "spaceshift_menu", title: "SpaceShift", description: "Przemierzaj odległe galaktyki!", link: "spaceshift.html" },
+			{ menuName: "komuwinien_menu", title: "Komu Winien?", description: "Komu jestem winien, a kto mi?", link: "komuwinien.html" },
+			{ menuName: "uczenie_menu", title: "Uczenie Parkowania", description: "Nauka parkowania na bazie 2 algorytmów", link: "uczenie.html" },
+			{ menuName: "inne_menu", title: "Inne projekty", description: "inne pomniejsze projekty", link: "inne.html" }
+			]
+
+
+		function setIndexMenu() {
+			updateMenu("index_menu");
+		}
+
+		function setRebounceMenu() {
+			updateMenu("rebounce_menu");
+		}
+
+		function setSpaceshiftMenu() {
+			updateMenu("spaceshift_menu");
+		}
+
+		function setKomuwinienMenu() {
+			updateMenu("komuwinien_menu");
+		}
+
+		function setUczenieMenu() {
+			updateMenu("uczenie_menu");
+		}
+
+		function setInneMenu() {
+			updateMenu("inne_menu");
+		}
+
+		var latestElement = "index_menu";
+
+		function updateMenu(activeMenuElement) {
+			console.log("fadeout");
+			$(document).ready(function () {
+				$("#wrapper, #nazwa, #opis").fadeOut("slow", function() { setMenuElements(activeMenuElement)
+				})
+				;
+			});
+
+		}
+
+		function setMenuElements(activeMenuElement) {
+
+
+			$("#" + latestElement).removeClass("current_page_item");
+			latestElement = activeMenuElement;
+			menuElements.forEach(element => {
+				if (activeMenuElement === element.menuName) {
+					$("#" + element.menuName).addClass("current_page_item");
+					$("#nazwa").text(element.title);
+					$("#opis").html(element.description);
+					$("#wrapper").load(element.link);
+				}
+
+			});
+
+
+			$("#wrapper, #nazwa, #opis").fadeIn();
+			console.log("fade in");
+
+
+
+		}
+
+	</script>
+
+</head>
+
+<body>
+
+	<div id="menu">
+		<ul>
+			<li id="index_menu" class="current_page_item"><a href="#" onclick="setIndexMenu();">Strona Główna</a></li>
+			<li id="rebounce_menu"><a href="#" onclick="setRebounceMenu();">ReBounce</a></li>
+			<li id="spaceshift_menu"><a href="#" onclick="setSpaceshiftMenu();">SpaceShift</a></li>
+			<li id="komuwinien_menu"><a href="#" onclick="setKomuwinienMenu();">Komu Winien?</a></li>
+			<li id="uczenie_menu"><a href="#" onclick="setUczenieMenu();">Uczenie parkowania</a></li>
+			<li id="inne_menu"><a href="#" onclick="setInneMenu();">Inne projekty</a></li>
+		</ul>
+	</div>
+	<script src="assets/js/remove-fbclid.js" async defer></script>
+
+	<!-- Header -->
+	<header id="header" class="alt">
+		<div class="inner">
+			<h1 id="nazwa">Dzień Dobry!</h1>
+			<p id="opis">Strona ta, zawiera kolekcję moich aplikacji i projektów </p>
+		</div>
+	</header>
+
+
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+
+		
+
+
+
+			<!-- Items -->
+			<!-- <section class="main items">
+				<article class="item">
+					<header>
+						<a href="#" onclick="setRebounceMenu();"><img src="images/rebounce.png" alt="" /></a>
+						<h3>ReBounce</h3>
+					</header>
+					<p>Skacz jak najdłużej!</p>
+					<ul class="actions">
+						<li><a  onclick="setRebounceMenu();" class="button">Zobacz</a></li>
+					</ul>
+				</article>
+				<article class="item">
+					<header>
+						<a href="#" onclick="setSpaceshiftMenu();"><img src="images/SpaceShift.png" alt="" /></a>
+						<h3>SpaceShift</h3>
+					</header>
+					<p>Przemierzaj odległe galaktyk!</p>
+					<ul class="actions">
+						<li><a onclick="setSpaceshiftMenu();" class="button">Zobacz</a></li>
+					</ul>
+				</article>
+				<article class="item">
+					<header>
+						<a href="#" onclick="setKomuwinienMenu();"><img src="images/komuwinien.png" alt="" /></a>
+						<h3>Komu Winien?</h3>
+					</header>
+					<p>Komu jestem winien, a kto mi?</p>
+					<ul class="actions">
+						<li><a onclick="setKomuwinienMenu();" class="button">Zobacz</a></li>
+					</ul>
+				</article>
+				<article class="item">
+					<header>
+						<a href="#" onclick="setUczenieMenu();"><img src="images/uczenie.png" alt="" /></a>
+						<h3>Uczenie parkowania</h3>
+					</header>
+					<p>Nauka parkowania na bazie 2 algorytmów </p>
+					<ul class="actions">
+						<li><a onclick="setUczenieMenu();" class="button">Zobacz</a></li>
+					</ul>
+				</article>
+			</section> -->
+
+		</div>
+
+
+
+		<!-- Footer -->
+		<footer id="footer">
+			<ul class="icons">
+				<li><a href="mailto:mateusz.michalik.poczta@gmail.com" class="icon fa-envelope"><span
+							class="label">Email</span></a></li>
+			</ul>
+			<p class="copyright"> Strona powstała na bazie: <a href="https://templated.co/epilogue">Epiloque -
+					TEMPLATED</a>. Zdjęcie nagłówka: <a
+					href="https://unsplash.com/@jupp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jonathan
+					Kemper</a>.</p>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
