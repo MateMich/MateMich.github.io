@@ -1297,11 +1297,27 @@ html {
 	
 }
 
-@media screen and (min-width: 1280px) and (max-width: 1422px)
+@media screen and (min-width: 1280px) and (max-width: 1423px)
 {
 				#menu
 				{
 					height: 50px;	
+				}
+}
+
+@media screen and   (max-width: 675px)
+{
+				#menu
+				{
+					height: 70px;	
+				}
+}
+
+@media screen and   (max-width: 484px)
+{
+				#menu
+				{
+					height: 90px;	
 				}
 }
 
