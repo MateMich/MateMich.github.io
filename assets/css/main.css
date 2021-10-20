@@ -1297,7 +1297,7 @@ html {
 	
 }
 
-@media screen and (max-width: 1408px)
+@media screen and (max-width: 1416px)
 {
 				#menu
 				{
@@ -1325,7 +1325,7 @@ html {
 {
 				#menu
 				{
-					height: 110px;	
+					display: none;
 				}
 }
 
