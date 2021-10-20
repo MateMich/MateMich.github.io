@@ -1297,7 +1297,7 @@ html {
 	
 }
 
-@media screen and (max-width: 1393px)
+@media screen and (max-width: 1408px)
 {
 				#menu
 				{
@@ -1305,7 +1305,7 @@ html {
 				}
 }
 
-@media screen and (max-width: 721px)
+@media screen and (max-width: 736px)
 {
 				#menu
 				{
@@ -1313,11 +1313,19 @@ html {
 				}
 }
 
-@media screen and (max-width: 508px)
+@media screen and (max-width: 523px)
 {
 				#menu
 				{
 					height: 90px;	
+				}
+}
+
+@media screen and (max-width: 475px)
+{
+				#menu
+				{
+					height: 110px;	
 				}
 }
 
