@@ -1285,13 +1285,7 @@ html {
 /* Menu                                                                          */
 /*********************************************************************************/
 
-@media screen and (min-width: 1280px) and (max-width: 1422px)
-{
-				#menu
-				{
-					height: 60px;	
-				}
-			}
+
 
 #menu
 {
@@ -1301,6 +1295,14 @@ html {
 	margin: 0px;
 	text-align: center;
 	
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1422px)
+{
+				#menu
+				{
+					height: 50px;	
+				}
 }
 
 #menu ul
