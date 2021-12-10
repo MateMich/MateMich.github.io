@@ -1651,11 +1651,11 @@ html {
 		@media screen and (max-width: 736px) {
 
 			#footer {
-				margin-top: 2em;
+				margin-top: 0em;
 			}
 
 				#footer:before {
-					margin-bottom: 2em;
+					margin-bottom: 0.5em;
 				}
 
 		}
@@ -1664,8 +1664,14 @@ html {
 		{	 
 			display: flex;
 			justify-content: center;
-		}
+			width: auto;
 
+		
+			
+		}
+		.google_store_link	image {
+			max-width: 60%;
+		}
 
 
 		/* Image Gallery */
