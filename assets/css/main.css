@@ -1628,7 +1628,7 @@ html {
 
 	#footer {
 		text-align: center;
-		margin-top: 4em;
+		margin-top: 0em;
 	}
 
 		#footer a {
@@ -1641,7 +1641,7 @@ html {
 			width: 6em;
 			height: 2px;
 			background-color: #666666;
-			margin-bottom: 4em;
+			margin-bottom: 1em;
 		}
 
 		#footer .copyright {
