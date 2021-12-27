@@ -1294,9 +1294,13 @@ html {
 	height: 30px;
 	margin: 0px;
 	text-align: center;
-	
+	display: flex;
 }
 
+#menu ul
+{
+	margin: auto;
+}
 @media screen and (max-width: 1416px)
 {
 				#menu
@@ -1323,6 +1327,12 @@ html {
 
 @media screen and (max-width: 475px)
 {
+
+				#menu
+				{
+					height: 50px;	
+				}
+
 				#menu li:nth-of-type(n+2)
 				{
 				
