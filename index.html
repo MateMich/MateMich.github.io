@@ -71,7 +71,7 @@
 		function updateMenu(activeMenuElement) {
 			console.log("fadeout");
 			$(document).ready(function () {
-				$("#wrapper, #nazwa, #opis, #footer").hide("slow", function() { setMenuElements(activeMenuElement)
+				$("#wrapper, #nazwa, #opis, #footer").slideUp("slow", function() { setMenuElements(activeMenuElement)
 				})
 				;
 			});
@@ -93,7 +93,7 @@
 
 			});
 
-			$("#wrapper, #nazwa, #opis, #footer").delay( 150 ).show();
+			$("#wrapper, #nazwa, #opis, #footer").delay( 150 ).slideDown();
 
 			console.log("fade in");
 
