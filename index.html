@@ -71,6 +71,8 @@
 		function updateMenu(activeMenuElement) {
 			console.log("fadeout");
 			$(document).ready(function () {
+				//Get the current position of the page
+				var pagePosition = $(window).scrollTop();     
 				$("#wrapper, #nazwa, #opis, #footer").slideUp("slow", function() { setMenuElements(activeMenuElement)
 				})
 				;
@@ -80,7 +82,10 @@
 
 		function setMenuElements(activeMenuElement) {
 
+          
 
+//Set page position after `.slideUp()` called
+$("html,body").scrollTop(pagePosition);
 			$("#" + latestElement).removeClass("current_page_item");
 			latestElement = activeMenuElement;
 			menuElements.forEach(element => {
