@@ -1323,9 +1323,10 @@ html {
 
 @media screen and (max-width: 475px)
 {
-				#menu
+				#menu li:nth-of-type(n+2)
 				{
-					display: none;
+				
+					 display: none; 
 				}
 }
 
