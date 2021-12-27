@@ -1295,6 +1295,9 @@ html {
 	margin: 0px;
 	text-align: center;
 	display: flex;
+	position: fixed;
+	z-index: 99;
+	background-color: #2f4038;
 }
 
 #menu ul
