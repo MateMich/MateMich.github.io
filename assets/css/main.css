@@ -1310,12 +1310,12 @@ html {
 }
 
 #menu a:hover {
-	background-color: #ddd;
+	background-color: #403a2f;
 	color: black;
   }
 
   #menu a.current_page_item {
-	background-color: #04AA6D;
+	background-color: #402f3b;
 	color: white;
   }
 
