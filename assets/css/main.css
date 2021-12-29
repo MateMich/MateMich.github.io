@@ -1293,6 +1293,8 @@ html {
 	z-index: 99;
 	overflow: hidden;
 	background-color: #2f4038;
+	cursor: pointer;
+	width: 100%;
 }
 
 #menu a
