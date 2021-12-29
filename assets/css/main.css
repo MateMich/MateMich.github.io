@@ -1470,9 +1470,9 @@ html {
 			color: inherit;
 		}
 
-			#header a:hover {
+			/* #header a:hover {
 				color: #EF6480 !important;
-			}
+			} */
 
 		#header strong, #header b {
 			color: #ffffff;
