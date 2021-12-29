@@ -29,6 +29,7 @@
 
 		var menuElements = [
 			{ menuName: "index_menu", title: "Dzień Dobry!", description: "Strona ta, zawiera kolekcję moich aplikacji i projektów", link: "index_content.html" },
+			{ menuName: "carintime_menu", title: "Car in time", description: "Manipuluj czasem!", link: "carintime.html" },
 			{ menuName: "rebounce_menu", title: "ReBounce", description: "Skacz jak najdłużej!", link: "rebounce.html" },
 			{ menuName: "spaceshift_menu", title: "SpaceShift", description: "Przemierzaj odległe galaktyki!", link: "spaceshift.html" },
 			{ menuName: "komuwinien_menu", title: "Komu Winien?", description: "Komu jestem winien, a kto mi?", link: "komuwinien.html" },
@@ -40,6 +41,10 @@
 
 		function setIndexMenu() {
 			updateMenu("index_menu");
+		}
+
+		function setCarintimeMenu() {
+			updateMenu("carintime_menu");
 		}
 
 		function setRebounceMenu() {
@@ -108,15 +113,16 @@
 <body>
 
 	<div id="menu">
-		<ul>
-			<li id="index_menu" class="current_page_item"><a onclick="setIndexMenu();">Strona Główna</a></li>
-			<li id="rebounce_menu"><a  onclick="setRebounceMenu();">ReBounce</a></li>
-			<li id="spaceshift_menu"><a  onclick="setSpaceshiftMenu();">SpaceShift</a></li>
-			<li id="komuwinien_menu"><a  onclick="setKomuwinienMenu();">Komu Winien?</a></li>
-			<li id="uczenie_menu"><a  onclick="setUczenieMenu();">Uczenie parkowania</a></li>
-			<li id="wykrywanie_menu"><a  onclick="setWykrywanieMenu();">Wykrywanie Twarzy</a></li>
-			<li id="inne_menu"><a  onclick="setInneMenu();">Inne projekty</a></li>
-		</ul>
+		
+			<a id="index_menu" class="current_page_item" onclick="setIndexMenu();">Strona Główna</a>
+			<a id="carintime_menu"  onclick="setCarintimeMenu();">Car in time</a>
+			<a id="rebounce_menu" onclick="setRebounceMenu();">ReBounce</a>
+			<a id="spaceshift_menu"  onclick="setSpaceshiftMenu();">SpaceShift</a>
+			<a id="komuwinien_menu" onclick="setKomuwinienMenu();">Komu Winien?</a>
+			<a id="uczenie_menu" onclick="setUczenieMenu();">Uczenie parkowania</a>
+			<a id="wykrywanie_menu" onclick="setWykrywanieMenu();">Wykrywanie Twarzy</a>
+			<a id="inne_menu" onclick="setInneMenu();">Inne projekty</a>
+	
 	</div>
 	<script src="assets/js/remove-fbclid.js" async defer></script>
 
