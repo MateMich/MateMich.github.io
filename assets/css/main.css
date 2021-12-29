@@ -1311,7 +1311,7 @@ html {
 
 #menu a:hover {
 	background-color: #403a2f;
-	color: black;
+	color: white;
   }
 
   #menu a.current_page_item {
