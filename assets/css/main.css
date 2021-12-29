@@ -1289,6 +1289,8 @@ html {
 
 #menu
 {
+	position: fixed;
+	z-index: 99;
 	overflow: hidden;
 	background-color: #2f4038;
 }
