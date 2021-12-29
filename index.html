@@ -106,14 +106,22 @@
 
 		}
 
+		function showDropdown() {
+  var x = document.getElementById("menu");
+  if (x.className === "") {
+    x.className += " responsive";
+  } else {
+    x.className = "";
+  }
+}
+
 	</script>
 
 </head>
 
 <body>
 
-	<div id="menu">
-		
+	<div id="menu">		
 			<a id="index_menu" class="current_page_item" onclick="setIndexMenu();">Strona Główna</a>
 			<a id="carintime_menu"  onclick="setCarintimeMenu();">Car in time</a>
 			<a id="rebounce_menu" onclick="setRebounceMenu();">ReBounce</a>
@@ -122,6 +130,9 @@
 			<a id="uczenie_menu" onclick="setUczenieMenu();">Uczenie parkowania</a>
 			<a id="wykrywanie_menu" onclick="setWykrywanieMenu();">Wykrywanie Twarzy</a>
 			<a id="inne_menu" onclick="setInneMenu();">Inne projekty</a>
+			<a href="javascript:void(0);" class="icon" onclick="showDropdown()">
+				<i class="fa fa-bars"></i>
+			  </a>
 	
 	</div>
 	<script src="assets/js/remove-fbclid.js" async defer></script>
