@@ -30,6 +30,7 @@
 		var menuElements = [
 			{ menuName: "index_menu", title: "Dzień Dobry!", description: "Strona ta, zawiera kolekcję moich aplikacji i projektów", link: "index_content.html" },
 			{ menuName: "carintime_menu", title: "Car in time", description: "Manipuluj czasem!", link: "carintime.html" },
+			{ menuName: "janusz_menu", title: "Janusz: Misja Passat", description: "Uzbieraj Na Passata!", link: "janusz.html" },
 			{ menuName: "rebounce_menu", title: "ReBounce", description: "Skacz jak najdłużej!", link: "rebounce.html" },
 			{ menuName: "spaceshift_menu", title: "SpaceShift", description: "Przemierzaj odległe galaktyki!", link: "spaceshift.html" },
 			{ menuName: "komuwinien_menu", title: "Komu Winien?", description: "Komu jestem winien, a kto mi?", link: "komuwinien.html" },
@@ -45,6 +46,10 @@
 
 		function setCarintimeMenu() {
 			updateMenu("carintime_menu");
+		}
+
+		function setJanuszMenu() {
+			updateMenu("janusz_menu");
 		}
 
 		function setRebounceMenu() {
@@ -124,6 +129,7 @@
 	<div id="menu">		
 			<a id="index_menu" class="current_page_item" onclick="setIndexMenu();">Strona Główna</a>
 			<a id="carintime_menu"  onclick="setCarintimeMenu();">Car in time</a>
+			<a id="janusz_menu"  onclick="setJanuszMenu();">Janusz: Misja Passat</a>
 			<a id="rebounce_menu" onclick="setRebounceMenu();">ReBounce</a>
 			<a id="spaceshift_menu"  onclick="setSpaceshiftMenu();">SpaceShift</a>
 			<a id="komuwinien_menu" onclick="setKomuwinienMenu();">Komu Winien?</a>
