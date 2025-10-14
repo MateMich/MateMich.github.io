@@ -29,6 +29,7 @@
 
 		var menuElements = [
 			{ menuName: "index_menu", title: "Dzień Dobry!", description: "Strona ta, zawiera kolekcję moich aplikacji i projektów", link: "index_content.html" },
+			{ menuName: "zenithrush_menu", title: "Zenith Rush", description: "Pobijaj czas!", link: "zenithrush.html" },
 			{ menuName: "carintime_menu", title: "Chrono Drive", description: "Manipuluj czasem!", link: "carintime.html" },
 			{ menuName: "janusz_menu", title: "Janusz: Misja Passat", description: "Uzbieraj Na Passata!", link: "janusz.html" },
 			{ menuName: "rebounce_menu", title: "ReBounce", description: "Skacz jak najdłużej!", link: "rebounce.html" },
@@ -42,6 +43,10 @@
 
 		function setIndexMenu() {
 			updateMenu("index_menu");
+		}
+
+			function setZenithrushMenu() {
+			updateMenu("zenithrush_menu");
 		}
 
 		function setCarintimeMenu() {
@@ -128,6 +133,7 @@
 
 	<div id="menu">		
 			<a id="index_menu" class="current_page_item" onclick="setIndexMenu();">Strona Główna</a>
+			<a id="zenithrush_menu"  onclick="setZenithrushMenu();">Zenith Rush</a>
 			<a id="carintime_menu"  onclick="setCarintimeMenu();">Chrono Drive</a>
 			<a id="janusz_menu"  onclick="setJanuszMenu();">Janusz: Misja Passat</a>
 			<a id="rebounce_menu" onclick="setRebounceMenu();">ReBounce</a>
