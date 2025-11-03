@@ -1828,9 +1828,8 @@ html {
   to {opacity: 1}
 }
 
-.iframe-container {
-  position: relative;
-  width: 100%; /* Dopasowuje się do szerokości rodzica */
-  overflow: hidden;
-  padding-top: 56.25%; /* To jest magia! 9 / 16 = 0.5625 */
+.responsive-iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Oto cała magia! */
+  height: auto; /* Domyślnie, ale dla pewności */
 }
