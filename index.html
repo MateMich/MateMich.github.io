@@ -29,6 +29,7 @@
 
 		var menuElements = [
 			{ menuName: "index_menu", title: "Dzień Dobry!", description: "Strona ta, zawiera kolekcję moich aplikacji i projektów", link: "index_content.html" },
+			{ menuName: "inne_menu", title: "Projekty komercyjne", description: "Projekty komercyjne i inne", link: "inne.html" }			
 			{ menuName: "zenithrush_menu", title: "Zenith Rush", description: "Pobijaj czas!", link: "zenithrush.html" },
 			{ menuName: "carintime_menu", title: "Chrono Drive", description: "Manipuluj czasem!", link: "carintime.html" },
 			{ menuName: "janusz_menu", title: "Janusz: Misja Passat", description: "Uzbieraj Na Passata!", link: "janusz.html" },
@@ -37,7 +38,6 @@
 			{ menuName: "komuwinien_menu", title: "Komu Winien?", description: "Komu jestem winien, a kto mi?", link: "komuwinien.html" },
 			{ menuName: "uczenie_menu", title: "Uczenie Parkowania", description: "Nauka parkowania na bazie 2 algorytmów", link: "uczenie.html" },
 			{ menuName: "wykrywanie_menu", title: "Wykrywanie Twarzy", description: "Wykrywanie twarzy z systemem logowania", link: "detekcja.html" },
-			{ menuName: "inne_menu", title: "Inne projekty", description: "inne pomniejsze projekty", link: "inne.html" }
 			]
 
 
@@ -133,6 +133,7 @@
 
 	<div id="menu">		
 			<a id="index_menu" class="current_page_item" onclick="setIndexMenu();">Strona Główna</a>
+			<a id="inne_menu" onclick="setInneMenu();">Projekty Komercyjne i inne</a>
 			<a id="zenithrush_menu"  onclick="setZenithrushMenu();">Zenith Rush</a>
 			<a id="carintime_menu"  onclick="setCarintimeMenu();">Chrono Drive</a>
 			<a id="janusz_menu"  onclick="setJanuszMenu();">Janusz: Misja Passat</a>
@@ -141,7 +142,7 @@
 			<a id="komuwinien_menu" onclick="setKomuwinienMenu();">Komu Winien?</a>
 			<a id="uczenie_menu" onclick="setUczenieMenu();">Uczenie parkowania</a>
 			<a id="wykrywanie_menu" onclick="setWykrywanieMenu();">Wykrywanie Twarzy</a>
-			<a id="inne_menu" onclick="setInneMenu();">Inne projekty</a>
+			
 			<a href="javascript:void(0);" class="icon" onclick="showDropdown()">
 				<i class="fa fa-bars"></i>
 			  </a>
