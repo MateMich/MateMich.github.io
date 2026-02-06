@@ -29,7 +29,8 @@
 
 		var menuElements = [
 			{ menuName: "index_menu", title: "Dzień Dobry!", description: "Strona ta, zawiera kolekcję moich aplikacji i projektów", link: "index_content.html" },
-			{ menuName: "inne_menu", title: "Projekty komercyjne", description: "Projekty komercyjne", link: "inne.html" },			
+			{ menuName: "inne_menu", title: "Projekty komercyjne", description: "Projekty komercyjne", link: "inne.html" },
+			{ menuName: "civduel_menu", title: "Civilization Duel", description: "Zostań władcą świata!", link: "civduel.html" },
 			{ menuName: "zenithrush_menu", title: "Zenith Rush", description: "Pobijaj czas!", link: "zenithrush.html" },
 			{ menuName: "carintime_menu", title: "Chrono Drive", description: "Manipuluj czasem!", link: "carintime.html" },
 			{ menuName: "janusz_menu", title: "Janusz: Misja Passat", description: "Uzbieraj Na Passata!", link: "janusz.html" },
@@ -48,6 +49,10 @@
 
 		function setInneMenu() {
 			updateMenu("inne_menu");
+		}
+
+		function setCivDuelMenu() {
+			updateMenu("civduel_menu");
 		}
 
 			function setZenithrushMenu() {
@@ -140,6 +145,7 @@
 	<div id="menu">		
 			<a id="index_menu" class="current_page_item" onclick="setIndexMenu();">Strona Główna</a>
 			<a id="inne_menu" onclick="setInneMenu();">Projekty Komercyjne</a>
+			<a id="civduel_menu" onclick="setCivDuelMenu();">Civilization Duel</a>
 			<a id="zenithrush_menu"  onclick="setZenithrushMenu();">Zenith Rush</a>
 			<a id="carintime_menu"  onclick="setCarintimeMenu();">Chrono Drive</a>
 			<a id="janusz_menu"  onclick="setJanuszMenu();">Janusz: Misja Passat</a>
