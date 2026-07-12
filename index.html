@@ -119,7 +119,11 @@
 					$("#" + element.menuName).addClass("current_page_item");
 					$("#nazwa").text(element.title);
 					$("#opis").html(element.description);
-					$("#wrapper").load(element.link);
+					$("#wrapper").load(element.link, function() {
+						if ($(this).find('.mySlides').length) {
+							showSlides(1);
+						}
+					});
 				}
 
 			});
@@ -210,6 +214,7 @@
 	<script src="assets/js/skel.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+	<script src="assets/js/slideshow.js"></script>
 
 </body>
 
