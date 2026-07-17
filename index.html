@@ -21,15 +21,19 @@
 	<title>Dzień Dobry!</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/main.css?v=51" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 	<script>
+		// Wyłączenie cache dla zapytań AJAX/jQuery, aby zmiany ładowały się natychmiast
+		$.ajaxSetup({ cache: false });
+
 		setIndexMenu();
 
 		var menuElements = [
 			{ menuName: "index_menu", title: "Dzień Dobry!", description: "Strona ta, zawiera kolekcję moich aplikacji i projektów", link: "index_content.html" },
 			{ menuName: "inne_menu", title: "Projekty komercyjne", description: "Projekty komercyjne", link: "inne.html" },
+			{ menuName: "moje_projekty_menu", title: "Moje Projekty", description: "Kolekcja moich autorskich gier i aplikacji", link: "moje_projekty.html" },
 			{ menuName: "civduel_menu", title: "Civilization Duel", description: "Zostań władcą świata!", link: "civduel.html" },
 			{ menuName: "ilenetto_menu", title: "IleNetto", description: "Kalkulator wynagrodzeń B2B i UoP", link: "ilenetto.html" },
 			{ menuName: "zenithrush_menu", title: "Zenith Rush", description: "Pobijaj czas!", link: "zenithrush.html" },
@@ -41,8 +45,23 @@
 			{ menuName: "uczenie_menu", title: "Uczenie Parkowania", description: "Nauka parkowania na bazie 2 algorytmów", link: "uczenie.html" },
 			//{ menuName: "wykrywanie_menu", title: "Wykrywanie Twarzy", description: "Wykrywanie twarzy z systemem logowania", link: "detekcja.html" }, 
 			{ menuName: "mniejsze_menu", title: "Inne", description: "Inne Projekty", link: "mniejsze.html" },
-			]
+		];
 
+		var menuToNavMap = {
+			"index_menu": "index_menu",
+			"inne_menu": "inne_menu",
+			"moje_projekty_menu": "moje_projekty_menu",
+			"civduel_menu": "moje_projekty_menu",
+			"ilenetto_menu": "moje_projekty_menu",
+			"zenithrush_menu": "moje_projekty_menu",
+			"carintime_menu": "moje_projekty_menu",
+			"janusz_menu": "moje_projekty_menu",
+			"rebounce_menu": "moje_projekty_menu",
+			"spaceshift_menu": "moje_projekty_menu",
+			"komuwinien_menu": "moje_projekty_menu",
+			"uczenie_menu": "moje_projekty_menu",
+			"mniejsze_menu": "moje_projekty_menu"
+		};
 
 		function setIndexMenu() {
 			updateMenu("index_menu");
@@ -50,6 +69,10 @@
 
 		function setInneMenu() {
 			updateMenu("inne_menu");
+		}
+
+		function setMojeProjektyMenu() {
+			updateMenu("moje_projekty_menu");
 		}
 
 		function setCivDuelMenu() {
@@ -60,7 +83,7 @@
 			updateMenu("ilenetto_menu");
 		}
 
-			function setZenithrushMenu() {
+		function setZenithrushMenu() {
 			updateMenu("zenithrush_menu");
 		}
 
@@ -92,59 +115,65 @@
 			updateMenu("wykrywanie_menu");
 		}
 
-	function setMniejszeMenu() {
+		function setMniejszeMenu() {
 			updateMenu("mniejsze_menu");
 		}
-		
 
-		var latestElement = "index_menu";
+		var latestNavElement = "index_menu";
 
 		function updateMenu(activeMenuElement) {
 			console.log("fadeout");
 			$(document).ready(function () {
-				$("#wrapper, #nazwa, #opis, #footer").slideUp("slow", function() { setMenuElements(activeMenuElement)
-				})
-				;
+				$("#wrapper, #nazwa, #opis, #footer").slideUp("slow", function() {
+					setMenuElements(activeMenuElement);
+				});
 			});
-
 		}
 
 		function setMenuElements(activeMenuElement) {
+			var activeNavElement = menuToNavMap[activeMenuElement] || "moje_projekty_menu";
+			$("#" + latestNavElement).removeClass("current_page_item");
+			latestNavElement = activeNavElement;
+			$("#" + activeNavElement).addClass("current_page_item");
 
-
-			$("#" + latestElement).removeClass("current_page_item");
-			latestElement = activeMenuElement;
 			menuElements.forEach(element => {
 				if (activeMenuElement === element.menuName) {
-					$("#" + element.menuName).addClass("current_page_item");
 					$("#nazwa").text(element.title);
 					$("#opis").html(element.description);
-					$("#wrapper").load(element.link, function() {
+					$("#wrapper").load(element.link + "?_ts=" + new Date().getTime(), function() {
 						if ($(this).find('.mySlides').length) {
 							showSlides(1);
 						}
 					});
 				}
-
 			});
 
-			$("#wrapper, #nazwa, #opis, #footer").delay( 150 ).slideDown();
-
+			$("#wrapper, #nazwa, #opis, #footer").delay(150).slideDown();
 			console.log("fade in");
-
-
-
 		}
 
 		function showDropdown() {
-  var x = document.getElementById("menu");
-  if (x.className === "") {
-    x.className += " responsive";
-  } else {
-    x.className = "";
-  }
-}
+			var x = document.getElementById("menu");
+			if (x.className === "") {
+				x.className += " responsive";
+			} else {
+				x.className = "";
+			}
+		}
 
+		// Mobile click toggle dropdown logic
+		$(document).ready(function() {
+			$(document).on('click', '.dropdown', function(e) {
+				if (window.innerWidth <= 1050) {
+					var target = $(e.target);
+					if (target.hasClass('dropbtn') || target.parent().hasClass('dropbtn')) {
+						e.preventDefault();
+						e.stopPropagation();
+						$(this).find('.dropdown-content').slideToggle(300);
+					}
+				}
+			});
+		});
 	</script>
 
 </head>
@@ -153,23 +182,38 @@
 
 	<div id="menu">		
 			<a id="index_menu" class="current_page_item" onclick="setIndexMenu();">Strona Główna</a>
-			<a id="inne_menu" onclick="setInneMenu();">Projekty Komercyjne</a>
-			<a id="civduel_menu" onclick="setCivDuelMenu();">Civilization Duel</a>
-			<a id="ilenetto_menu" onclick="setIlenettoMenu();">IleNetto</a>
-			<a id="zenithrush_menu"  onclick="setZenithrushMenu();">Zenith Rush</a>
-			<a id="carintime_menu"  onclick="setCarintimeMenu();">Chrono Drive</a>
-			<a id="janusz_menu"  onclick="setJanuszMenu();">Janusz: Misja Passat</a>
-			<a id="rebounce_menu" onclick="setRebounceMenu();">ReBounce</a>
-			<a id="spaceshift_menu"  onclick="setSpaceshiftMenu();">SpaceShift</a>
-			<a id="komuwinien_menu" onclick="setKomuwinienMenu();">Komu Winien?</a>
-			<a id="uczenie_menu" onclick="setUczenieMenu();">Uczenie parkowania</a>
-			<!--<a id="wykrywanie_menu" onclick="setWykrywanieMenu();">Wykrywanie Twarzy</a> -->
-			<a id="mniejsze" onclick="setMniejszeMenu();">Inne projekty</a>
+			<div class="dropdown">
+				<a id="inne_menu" class="dropbtn">Projekty Komercyjne <i class="fa fa-caret-down"></i></a>
+				<div class="dropdown-content">
+					<a onclick="setInneMenu();" style="font-weight: bold; border-bottom: 2px solid rgba(255,255,255,0.15);">Zobacz wszystkie</a>
+					<a href="https://www.seapark.pl/foczka-nina" target="_blank">Foczka Nina</a>
+					<a href="https://juraparkbaltow.pl/atrakcje/adventure-planet/" target="_blank">Adventure Planet</a>
+					<a href="https://www.facebook.com/intobeyond.game/" target="_blank">Into BeYond</a>
+					<a href="https://store.steampowered.com/app/503770/Elven_Assassin/" target="_blank">Elven Assassin</a>
+					<a href="https://store.steampowered.com/app/778250/Battle_of_Kings_VR/" target="_blank">Battle of Kings</a>
+					<a href="https://apps.apple.com/gb/app/mtb-downhill-simulator-extreme-freeride-bike-3d/id1053989443" target="_blank">MTB Downhill Simulator</a>
+				</div>
+			</div>
+			<div class="dropdown">
+				<a id="moje_projekty_menu" class="dropbtn">Moje Projekty <i class="fa fa-caret-down"></i></a>
+				<div class="dropdown-content">
+					<a onclick="setMojeProjektyMenu();" style="font-weight: bold; border-bottom: 2px solid rgba(255,255,255,0.15);">Zobacz wszystkie</a>
+					<a onclick="setCivDuelMenu();">Civilization Duel</a>
+					<a onclick="setIlenettoMenu();">IleNetto</a>
+					<a onclick="setZenithrushMenu();">Zenith Rush</a>
+					<a onclick="setCarintimeMenu();">Chrono Drive</a>
+					<a onclick="setJanuszMenu();">Janusz: Misja Passat</a>
+					<a onclick="setRebounceMenu();">ReBounce</a>
+					<a onclick="setSpaceshiftMenu();">SpaceShift</a>
+					<a onclick="setKomuwinienMenu();">Komu Winien?</a>
+					<a onclick="setUczenieMenu();">Uczenie parkowania</a>
+					<a onclick="setMniejszeMenu();">Inne projekty</a>
+				</div>
+			</div>
 			
 			<a href="javascript:void(0);" class="icon" onclick="showDropdown()">
 				<i class="fa fa-bars"></i>
-			  </a>
-	
+			</a>
 	</div>
 	<script src="assets/js/remove-fbclid.js" async defer></script>
 
@@ -201,10 +245,8 @@
 				<li><a href="mailto:mateusz.michalik.poczta@gmail.com" class="icon fa-envelope"><span
 							class="label">Email</span></a></li>			
 			</ul>
-			<p class="copyright"> Strona powstała na bazie: <a href="https://templated.co/epilogue">Epiloque -
-					TEMPLATED</a>. Zdjęcie nagłówka: <a
-					href="https://unsplash.com/@jupp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jonathan
-					Kemper</a>.</p>
+			<p class="copyright">Zdjęcie nagłówka: <a href="https://unsplash.com/@jupp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jonathan Kemper</a>.</p>
+
 		</footer>
 
 	</div>

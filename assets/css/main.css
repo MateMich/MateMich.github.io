@@ -1062,6 +1062,13 @@ html {
 		border-radius: 4px;
 		text-align: center;
 		height: auto;
+		transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+	}
+
+	.items .item:hover {
+		transform: translateY(-6px) scale(1.02);
+		box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+		z-index: 2;
 	}
 
 		.item header {
@@ -1122,10 +1129,11 @@ html {
 			}
 
 			.item header a {
-				-moz-transition: -moz-transform 0.2s ease;
-				-webkit-transition: -webkit-transform 0.2s ease;
-				-ms-transition: -ms-transform 0.2s ease;
-				transition: transform 0.2s ease;
+				-moz-transition: -moz-transform 0.5s ease, filter 0.5s ease;
+				-webkit-transition: -webkit-transform 0.5s ease, filter 0.5s ease;
+				-ms-transition: -ms-transform 0.5s ease, filter 0.5s ease;
+				transition: transform 0.5s ease, filter 0.5s ease, box-shadow 0.5s ease;
+				filter: brightness(0.75) grayscale(15%);
 				background-size: cover;
 				background-position: center;
 				background-repeat: no-repeat;
@@ -1150,10 +1158,12 @@ html {
 				}
 
 			.item header:hover a {
-				-moz-transform: scale(1.1);
-				-webkit-transform: scale(1.1);
-				-ms-transform: scale(1.1);
-				transform: scale(1.1);
+				-moz-transform: scale(1.07);
+				-webkit-transform: scale(1.07);
+				-ms-transform: scale(1.07);
+				transform: scale(1.07);
+				filter: brightness(1.05) grayscale(0%);
+				box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 			}
 
 			.item header > * {
@@ -1323,9 +1333,8 @@ html {
 	display: none;
   }
 
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 1050px) {
-	#menu a:not(:first-child) {display: none;}
+	#menu a:not(:first-child), #menu .dropdown {display: none;}
 	#menu a.icon {
 	  float: right;
 	  display: block;
@@ -1340,7 +1349,7 @@ html {
 	  right: 0;
 	  top: 0;
 	}
-	#menu.responsive a {
+	#menu.responsive a, #menu.responsive .dropdown {
 	  float: none;
 	  display: block;
 	  text-align: left;
@@ -1833,3 +1842,666 @@ html {
   aspect-ratio: 16 / 9; /* Oto cała magia! */
   height: auto; /* Domyślnie, ale dla pewności */
 }
+
+/* Category selection styling */
+.category-selector {
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-moz-justify-content: center;
+	-webkit-justify-content: center;
+	-ms-justify-content: center;
+	justify-content: center;
+	gap: 2.5em;
+	max-width: 1000px;
+	margin: 0 auto !important;
+	padding: 3em 0 1em 0;
+	width: 100% !important;
+}
+
+.category-card {
+	flex: 1;
+	max-width: 460px;
+	transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+	cursor: pointer;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.category-card:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.category-card header a {
+	transition: transform 0.5s ease !important;
+}
+
+.category-card:hover header a {
+	transform: scale(1.08);
+}
+
+.category-card p {
+	font-size: 1.1em;
+	margin: 1.5em 0;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+@media screen and (max-width: 736px) {
+	.category-selector {
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-moz-align-items: center;
+		-webkit-align-items: center;
+		-ms-align-items: center;
+		align-items: center;
+		gap: 2em;
+		padding: 1em 0;
+	}
+	.category-card {
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+/* Navigation dropdown menu */
+.dropdown {
+	float: left;
+	overflow: visible;
+	position: relative;
+}
+
+.dropdown .dropbtn {
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background-color: inherit;
+	margin: 0;
+}
+
+/* On desktop, show dropdown-content using transitions */
+.dropdown-content {
+	display: block; /* always block on desktop so transition works */
+	position: absolute;
+	background-color: #2f4038;
+	min-width: 240px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+	z-index: 1000;
+	border-radius: 0 0 6px 6px;
+	overflow: hidden;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(10px);
+	transition: opacity 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), visibility 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.dropdown-content a {
+	float: none;
+	color: #f2f2f2 !important;
+	padding: 12px 18px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+	font-size: 15px;
+	transition: background-color 0.2s ease, padding-left 0.2s ease;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dropdown-content a:last-child {
+	border-bottom: none;
+}
+
+.dropdown-content a:hover {
+	background-color: #403a2f !important;
+	padding-left: 24px;
+	color: #fff !important;
+}
+
+.dropdown:hover .dropdown-content {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+/* Override jQuery inline style display:none on desktop */
+@media screen and (min-width: 1051px) {
+	.dropdown-content {
+		display: block !important;
+	}
+}
+
+/* Make sure menu behaves correctly with dropdowns in terms of overflow */
+#menu {
+	overflow: visible !important;
+}
+
+/* Responsive adjustment for dropdown in menu */
+@media screen and (max-width: 1050px) {
+	#menu.responsive .dropdown {
+		float: none;
+		display: block;
+		text-align: left;
+		width: 100%;
+	}
+	#menu.responsive .dropdown .dropbtn {
+		display: block;
+		width: 100%;
+		text-align: left;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	}
+	#menu.responsive .dropdown-content {
+		position: relative;
+		display: none; /* jQuery slideToggle will control display property on mobile */
+		background-color: #26332c;
+		box-shadow: none;
+		min-width: 100%;
+		border-radius: 0;
+		opacity: 1 !important;
+		visibility: visible !important;
+		transform: none !important;
+	}
+	#menu.responsive .dropdown-content a {
+		padding-left: 30px;
+	}
+	#menu.responsive .dropdown-content a:hover {
+		padding-left: 35px;
+	}
+}
+
+/* Category Selection Option 1 (Hover Expand Split Screen) styling */
+/* Homepage wrapper dynamic widening to prevent transition clipping */
+#wrapper:has(.category-selector) {
+	width: 75vw !important;
+	max-width: 2880px !important;
+	transition: width 0.3s ease;
+}.category-selector {
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-moz-flex-wrap: nowrap !important;
+	-webkit-flex-wrap: nowrap !important;
+	-ms-flex-wrap: nowrap !important;
+	flex-wrap: nowrap !important;
+	-moz-justify-content: center;
+	-webkit-justify-content: center;
+	-ms-justify-content: center;
+	justify-content: center;
+	gap: 2.5em;
+	width: 100% !important;
+	max-width: 100% !important;
+	padding: 4em 0 2em 0;
+}
+
+.category-card {
+	flex-grow: 1 !important;
+	flex-shrink: 1 !important;
+	flex-basis: 0% !important;
+	width: auto !important;
+	max-width: none !important;
+	margin: 0 !important;
+	height: clamp(450px, 45vh, 700px) !important;
+	position: relative;
+	overflow: hidden;
+	border-radius: 8px !important;
+	border: 1px solid rgba(255, 255, 255, 0.08) !important;
+	background: #121212 !important;
+	padding: 0 !important;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+	transition: flex-grow 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.category-selector:hover .category-card {
+	flex-grow: 0.95 !important;
+}
+
+.category-selector .category-card:hover {
+	flex-grow: 1.05 !important;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+.card-slideshow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.card-slideshow .slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	opacity: 0;
+	filter: grayscale(80%) brightness(0.4);
+	transition: opacity 1s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.6s ease, transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+	transform: scale(1);
+}
+
+.card-slideshow .slide.active {
+	opacity: 1;
+}
+
+.category-card:hover .card-slideshow .slide.active {
+	filter: grayscale(0%) brightness(0.6) !important;
+	transform: scale(1.05) !important;
+}
+
+.category-card .card-content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 3em 2.5em;
+	box-sizing: border-box;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-moz-flex-direction: column;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-moz-justify-content: center;
+	-webkit-justify-content: center;
+	-ms-justify-content: center;
+	justify-content: center;
+	-moz-align-items: center;
+	-webkit-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+	text-align: center;
+	z-index: 2;
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0.45) 100%);
+}
+
+.category-card h3 {
+	font-size: clamp(2rem, 3.2vw, 4.2rem);
+	color: #ffffff;
+	margin: 0;
+	font-weight: 700;
+	letter-spacing: 1px;
+	white-space: nowrap;
+	width: 100%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.category-card p {
+	max-height: 0;
+	opacity: 0;
+	margin: 0 !important;
+	overflow: hidden;
+	color: rgba(255, 255, 255, 0.85);
+	line-height: 1.5;
+	font-size: clamp(0.95rem, 1.1vw, 1.35rem);
+	max-width: 85%;
+	transition: max-height 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.5s ease, margin 0.5s ease;
+}
+
+.category-card:hover p {
+	max-height: 160px !important;
+	opacity: 0.95 !important;
+	margin-top: 1em !important;
+	margin-bottom: 1.5em !important;
+}
+
+.category-card .button {
+	transform: translateY(15px);
+	opacity: 0;
+	transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.5s ease, background-color 0.3s ease;
+}
+
+.category-card:hover .button {
+	transform: translateY(0) !important;
+	opacity: 1 !important;
+}
+
+@media screen and (max-width: 736px) {
+	#wrapper:has(.category-selector) {
+		width: auto !important;
+		max-width: calc(100% - 2em) !important;
+	}
+
+	.category-selector {
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		gap: 1.5em;
+		padding: 1em 0;
+		width: 100% !important;
+		max-width: 100% !important;
+		left: 0 !important;
+		transform: none !important;
+		margin: 0 !important;
+	}
+	.category-card {
+		width: 100% !important;
+		height: 320px !important;
+		flex: none !important;
+	}
+	.category-card .card-slideshow .slide {
+		filter: grayscale(20%) brightness(0.5) !important;
+	}
+	.category-card p {
+		max-height: 100px !important;
+		opacity: 0.9 !important;
+		margin-top: 0.8em !important;
+		margin-bottom: 1.2em !important;
+	}
+	.category-card .button {
+		transform: none !important;
+		opacity: 1 !important;
+	}
+}
+
+/* Premium Back Button styling */
+#wrapper:has(.category-selector) {
+	width: 75vw !important;
+	max-width: 2880px !important;
+	transition: width 0.3s ease;
+}.category-selector {
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-moz-flex-wrap: nowrap !important;
+	-webkit-flex-wrap: nowrap !important;
+	-ms-flex-wrap: nowrap !important;
+	flex-wrap: nowrap !important;
+	-moz-justify-content: center;
+	-webkit-justify-content: center;
+	-ms-justify-content: center;
+	justify-content: center;
+	gap: 2.5em;
+	width: 100% !important;
+	max-width: 100% !important;
+	padding: 1.5em 0 2em 0;
+}
+
+
+/* Reduce header height slightly on homepage to give more room for cards below */
+body:has(.category-selector) #header.alt {
+	min-height: 55vh !important;
+	padding: 6em 0 4em 0 !important;
+}
+
+body:has(.category-selector) #wrapper {
+	padding-top: 1.5em !important;
+}
+
+.category-card {
+	flex-grow: 1 !important;
+	flex-shrink: 1 !important;
+	flex-basis: 0% !important;
+	width: auto !important;
+	max-width: none !important;
+	margin: 0 !important;
+	height: clamp(600px, 66vh, 900px) !important;
+	position: relative;
+	overflow: hidden;
+	border-radius: 8px !important;
+	border: 1px solid rgba(255, 255, 255, 0.08) !important;
+	background: #121212 !important;
+	padding: 0 !important;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+	transition: flex-grow 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.category-selector:hover .category-card {
+	flex-grow: 0.95 !important;
+}
+
+.category-selector .category-card:hover {
+	flex-grow: 1.05 !important;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Subtle color differentiation between card types */
+.card-commercial {
+	border-color: rgba(80, 140, 220, 0.22) !important;
+	background: #0e1520 !important;
+}
+
+.card-commercial:hover {
+	border-color: rgba(80, 140, 220, 0.45) !important;
+	box-shadow: 0 20px 40px rgba(30, 80, 180, 0.25) !important;
+}
+
+.card-personal {
+	border-color: rgba(60, 180, 120, 0.22) !important;
+	background: #0e1a14 !important;
+}
+
+.card-personal:hover {
+	border-color: rgba(60, 180, 120, 0.45) !important;
+	box-shadow: 0 20px 40px rgba(20, 120, 70, 0.25) !important;
+}
+
+/* Background collage - Ken Burns crossfade system */
+.card-collage {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+@keyframes kenBurnsEffect {
+	0% {
+		transform: scale(1.03) translate(0, 0);
+	}
+	50% {
+		transform: scale(1.10) translate(-1%, -0.5%);
+	}
+	100% {
+		transform: scale(1.15) translate(-1.5%, -1%);
+	}
+}
+
+.collage-slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	filter: grayscale(45%) brightness(0.38);
+	transition: filter 0.8s ease, opacity 2.0s ease-in-out;
+	opacity: 0;
+	z-index: 1;
+	animation: kenBurnsEffect 20s ease-in-out infinite alternate;
+}
+
+.collage-slide.active {
+	opacity: 1;
+	z-index: 2;
+}
+
+.category-card:hover .collage-slide {
+	filter: grayscale(0%) brightness(0.68) !important;
+}
+
+.category-card .card-content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 3em 2.5em 2em 2.5em;
+	box-sizing: border-box;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-moz-flex-direction: column;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-moz-justify-content: center;
+	-webkit-justify-content: center;
+	-ms-justify-content: center;
+	justify-content: center;
+	-moz-align-items: center;
+	-webkit-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+	text-align: center;
+	z-index: 2;
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.35) 100%);
+}
+
+.category-card h3 {
+	font-size: clamp(2rem, 3.2vw, 4.2rem);
+	color: #ffffff;
+	margin: 0;
+	font-weight: 700;
+	letter-spacing: 1px;
+	white-space: nowrap;
+	width: 100%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.category-card p {
+	max-height: 0;
+	opacity: 0;
+	margin: 0 !important;
+	overflow: hidden;
+	color: rgba(255, 255, 255, 0.85);
+	line-height: 1.5;
+	font-size: clamp(0.95rem, 1.1vw, 1.35rem);
+	max-width: 85%;
+	transition: max-height 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.5s ease, margin 0.5s ease;
+}
+
+.category-card:hover p {
+	max-height: 160px !important;
+	opacity: 0.95 !important;
+	margin-top: 1em !important;
+	margin-bottom: 1.5em !important;
+}
+
+.category-card .button {
+	transform: translateY(15px);
+	opacity: 0;
+	transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.5s ease, background-color 0.3s ease;
+}
+
+.category-card:hover .button {
+	transform: translateY(0) !important;
+	opacity: 1 !important;
+}
+
+@media screen and (max-width: 736px) {
+	#wrapper:has(.category-selector) {
+		width: auto !important;
+		max-width: calc(100% - 2em) !important;
+	}
+
+	.category-selector {
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		gap: 1.5em;
+		padding: 1em 0;
+		width: 100% !important;
+		max-width: 100% !important;
+		left: 0 !important;
+		transform: none !important;
+		margin: 0 !important;
+	}
+	.category-card {
+		width: 100% !important;
+		height: 320px !important;
+		flex: none !important;
+	}
+	.category-card .collage-slide {
+		filter: grayscale(20%) brightness(0.45) !important;
+	}
+	.category-card p {
+		max-height: 100px !important;
+		opacity: 0.9 !important;
+		margin-top: 0.8em !important;
+		margin-bottom: 1.2em !important;
+	}
+	.category-card .button {
+		transform: none !important;
+		opacity: 1 !important;
+	}
+}
+
+/* Premium Back Button styling */
+.back-button-container {
+	margin-bottom: 2em;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-moz-justify-content: flex-start;
+	-webkit-justify-content: flex-start;
+	-ms-justify-content: flex-start;
+	justify-content: flex-start;
+	width: 100%;
+}
+
+.back-button {
+	display: -moz-inline-flex !important;
+	display: -webkit-inline-flex !important;
+	display: -ms-inline-flex !important;
+	display: inline-flex !important;
+	-moz-align-items: center;
+	-webkit-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+	gap: 0.6em;
+	padding: 0.6em 1.6em !important;
+	height: auto !important;
+	line-height: normal !important;
+	border-radius: 4px !important;
+	background-color: rgba(255, 255, 255, 0.05) !important;
+	box-shadow: none !important;
+	border: 1px solid rgba(255, 255, 255, 0.15) !important;
+	color: rgba(255, 255, 255, 0.8) !important;
+	font-weight: 600;
+	font-size: 0.85em;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s ease !important;
+	cursor: pointer;
+}
+
+.back-button:hover {
+	background-color: rgba(255, 255, 255, 0.1) !important;
+	border-color: rgba(255, 255, 255, 0.3) !important;
+	color: #ffffff !important;
+	transform: translateX(-5px) !important;
+}
+
+.back-button i {
+	font-size: 0.85em;
+	transition: transform 0.3s ease;
+}
+
+.back-button:hover i {
+	transform: translateX(-3px);
+}
+
+
