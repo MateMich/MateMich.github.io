@@ -137,13 +137,21 @@
 		}
 
 		function showDropdown() {
-  var x = document.getElementById("menu");
-  if (x.className === "") {
-    x.className += " responsive";
-  } else {
-    x.className = "";
-  }
-}
+				var x = document.getElementById("menu");
+				if (x.className === "") {
+						x.className += " responsive";
+				} else {
+						x.className = "";
+				}
+		}
+
+		function toggleCommercialDropdown(e) {
+				e.stopPropagation();
+				var dropdown = e.target.closest('.dropdown');
+				if (dropdown) {
+						dropdown.classList.toggle('open');
+				}
+		}
 
 	</script>
 
@@ -153,17 +161,80 @@
 
 	<div id="menu">		
 			<a id="index_menu" class="current_page_item" onclick="setIndexMenu();">Strona Główna</a>
-			<a id="inne_menu" onclick="setInneMenu();">Projekty Komercyjne</a>
-			<a id="civduel_menu" onclick="setCivDuelMenu();">Civilization Duel</a>
-			<a id="ilenetto_menu" onclick="setIlenettoMenu();">IleNetto</a>
-			<a id="zenithrush_menu"  onclick="setZenithrushMenu();">Zenith Rush</a>
-			<a id="carintime_menu"  onclick="setCarintimeMenu();">Chrono Drive</a>
-			<a id="janusz_menu"  onclick="setJanuszMenu();">Janusz: Misja Passat</a>
-			<a id="rebounce_menu" onclick="setRebounceMenu();">ReBounce</a>
-			<a id="spaceshift_menu"  onclick="setSpaceshiftMenu();">SpaceShift</a>
-			<a id="komuwinien_menu" onclick="setKomuwinienMenu();">Komu Winien?</a>
-			<a id="uczenie_menu" onclick="setUczenieMenu();">Uczenie parkowania</a>
-			<!--<a id="wykrywanie_menu" onclick="setWykrywanieMenu();">Wykrywanie Twarzy</a> -->
+			<div class="dropdown">
+				<a id="inne_menu" class="dropbtn" onclick="setInneMenu(); toggleCommercialDropdown(event);">Projekty Komercyjne <span class="caret">▾</span></a>
+				<div class="dropdown-content">
+					<a href="https://www.seapark.pl/foczka-nina" target="_blank" onclick="toggleCommercialDropdown(event)">
+						<strong>Foczka Nina</strong><br>
+						<small>Interaktywna atrakcja dla najmłodszych</small>
+					</a>
+					<a href="https://juraparkbaltow.pl/atrakcje/adventure-planet/" target="_blank" onclick="toggleCommercialDropdown(event)">
+						<strong>Adventure Planet</strong><br>
+						<small>VR w świecie jurajskich stworzeń</small>
+					</a>
+					<a href="https://www.facebook.com/intobeyond.game/" target="_blank" onclick="toggleCommercialDropdown(event)">
+						<strong>Into BeYond</strong><br>
+						<small>Gra RPG akcji</small>
+					</a>
+					<a href="https://store.steampowered.com/app/503770/Elven_Assassin/" target="_blank" onclick="toggleCommercialDropdown(event)">
+						<strong>Elven Assassin</strong><br>
+						<small>Sieciowa gra VR</small>
+					</a>
+					<a href="https://store.steampowered.com/app/778250/Battle_of_Kings_VR/" target="_blank" onclick="toggleCommercialDropdown(event)">
+						<strong>Battle of Kings VR</strong><br>
+						<small>Gra VR - obrona zamku</small>
+					</a>
+					<a href="https://apps.apple.com/gb/app/mtb-downhill-simulator-extreme-freeride-bike-3d/id1053989443" target="_blank" onclick="toggleCommercialDropdown(event)">
+						<strong>MTB Downhill</strong><br>
+						<small>Gra na telefony - zjazd na rowerze</small>
+					</a>
+				</div>
+			</div>
+			<div class="dropdown">
+				<a class="dropbtn" onclick="toggleCommercialDropdown(event);">Moje Projekty <span class="caret">▾</span></a>
+				<div class="dropdown-content">
+				<a onclick="setCivDuelMenu(); toggleCommercialDropdown(event);">
+						<strong>Civilization Duel</strong><br>
+						<small>Strategiczna gra karciana</small>
+					</a>
+					<a onclick="setIlenettoMenu(); toggleCommercialDropdown(event);">
+						<strong>IleNetto</strong><br>
+						<small>Kalkulator wynagrodzeń B2B i UoP</small>
+					</a>
+					<a onclick="setZenithrushMenu(); toggleCommercialDropdown(event);">
+						<strong>Zenith Rush</strong><br>
+						<small>Gra czasu i refleksu</small>
+					</a>
+					<a onclick="setCarintimeMenu(); toggleCommercialDropdown(event);">
+						<strong>Chrono Drive</strong><br>
+						<small>Gra z manipulacją czasem</small>
+					</a>
+					<a onclick="setJanuszMenu(); toggleCommercialDropdown(event);">
+						<strong>Janusz: Misja Passat</strong><br>
+						<small>Platformówka o Januszu i Passacie</small>
+					</a>
+					<a onclick="setRebounceMenu(); toggleCommercialDropdown(event);">
+						<strong>ReBounce</strong><br>
+						<small>Skacz jak najdłużej!</small>
+					</a>
+					<a onclick="setSpaceshiftMenu(); toggleCommercialDropdown(event);">
+						<strong>SpaceShift</strong><br>
+						<small>Podróż przez galaktyki</small>
+					</a>
+					<a onclick="setKomuwinienMenu(); toggleCommercialDropdown(event);">
+						<strong>Komu Winien?</strong><br>
+						<small>Komu jestem winien, a kto mi?</small>
+					</a>
+					<a onclick="setUczenieMenu(); toggleCommercialDropdown(event);">
+						<strong>Uczenie Parkowania</strong><br>
+						<small>Algorytmy parkowania</small>
+					</a>
+					<a onclick="setMniejszeMenu(); toggleCommercialDropdown(event);">
+						<strong>Inne Projekty</strong><br>
+						<small>Wykrywanie twarzy, React i inne</small>
+					</a>
+				</div>
+			</div>
 			<a id="mniejsze" onclick="setMniejszeMenu();">Inne projekty</a>
 			
 			<a href="javascript:void(0);" class="icon" onclick="showDropdown()">
