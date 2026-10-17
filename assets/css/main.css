@@ -1670,6 +1670,18 @@ html {
 		text-align: center;
 	}
 
+		/* Opisy projektów: zwykły tekst zamiast wersalików, węższa kolumna dla czytelności */
+		#cta h3 p,
+		#cta p {
+			text-transform: none;
+			letter-spacing: normal;
+			font-size: 1.15rem;
+			line-height: 1.75;
+			max-width: 46em;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
 		@media screen and (max-width: 736px) {
 
 			#cta {
@@ -2126,15 +2138,15 @@ html {
 }
 
 .category-card h3 {
-	font-size: clamp(2rem, 3.2vw, 4.2rem);
+	font-size: clamp(1.8rem, 2.8vw, 3.6rem);
 	color: #ffffff;
 	margin: 0;
 	font-weight: 700;
 	letter-spacing: 1px;
-	white-space: nowrap;
+	line-height: 1.15;
 	width: 100%;
-	text-overflow: ellipsis;
-	overflow: hidden;
+	overflow-wrap: break-word;
+	text-wrap: balance;
 }
 
 .category-card p {
@@ -2368,15 +2380,15 @@ body:has(.category-selector) #wrapper {
 }
 
 .category-card h3 {
-	font-size: clamp(2rem, 3.2vw, 4.2rem);
+	font-size: clamp(1.8rem, 2.8vw, 3.6rem);
 	color: #ffffff;
 	margin: 0;
 	font-weight: 700;
 	letter-spacing: 1px;
-	white-space: nowrap;
+	line-height: 1.15;
 	width: 100%;
-	text-overflow: ellipsis;
-	overflow: hidden;
+	overflow-wrap: break-word;
+	text-wrap: balance;
 }
 
 .category-card p {
@@ -2504,4 +2516,15 @@ body:has(.category-selector) #wrapper {
 	transform: translateX(-3px);
 }
 
+/* Projekty komercyjne: linia z opisem roli */
+.commercial-items .item .role {
+	font-size: 0.9em;
+	opacity: 0.85;
+	border-top: 1px solid rgba(255, 255, 255, 0.12);
+	padding-top: 0.8em;
+}
 
+.commercial-items .item .role strong {
+	color: #ffffff;
+	font-weight: 600;
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-8J2FPZWNWB"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-8J2FPZWNWB');
+	</script>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Inteligentny dom – Mateusz Michalik</title>
+	<meta name="description" content="Inteligentny dom: Przewodowy inteligentny dom DIY sterowany przez Domoticza." />
+	<meta name="author" content="Mateusz Michalik" />
+	<link rel="canonical" href="https://matemich.github.io/inteligentny-dom.html" />
+	<meta property="og:type" content="website" />
+	<meta property="og:locale" content="pl_PL" />
+	<meta property="og:url" content="https://matemich.github.io/inteligentny-dom.html" />
+	<meta property="og:title" content="Inteligentny dom – Mateusz Michalik" />
+	<meta property="og:description" content="Inteligentny dom: Przewodowy inteligentny dom DIY sterowany przez Domoticza." />
+	<meta property="og:image" content="https://matemich.github.io/images/domoticz/schemat.png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;display=swap" />
+	<link rel="stylesheet" href="/assets/site.css?v=12" />
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+	<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	<script>
+		// Facebook dokleja ?fbclid=… do linków – usuń go z paska adresu
+		if (location.search.indexOf('fbclid=') > -1) {
+			var u = new URL(location.href);
+			u.searchParams.delete('fbclid');
+			history.replaceState(null, '', u.pathname + u.search + u.hash);
+		}
+	</script>
+</head>
+<body>
+	<a class="skip" href="#tresc">Przejdź do treści</a>
+	<header class="topbar">
+		<div class="wrap">
+			<a class="wordmark" href="/">Mateusz Michalik</a>
+			<nav aria-label="Nawigacja">
+				<a href="/#graj">Wszystkie projekty</a>
+				<a href="#kontakt">Kontakt</a>
+			</nav>
+		</div>
+	</header>
+	<main id="tresc">
+		<section class="project-hero">
+			<div class="wrap">
+				<a class="back" href="/">Wróć do wszystkich projektów</a>
+				<h1>Inteligentny dom</h1>
+				<p class="tagline">Przewodowy inteligentny dom DIY sterowany przez Domoticza</p>
+				<div class="project-actions">
+
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="wrap project-body">
+				<div class="project-text">
+				<p>Inteligentny dom, który zamiast urządzeń na Wi-Fi stoi na kablu. Centralą jest Raspberry Pi z Domoticzem, a moduły na Arduino rozmawiają z nią przez sieć MySensors po magistrali RS485. Całość spina bramka Ethernet montowana na szynie DIN, z zabezpieczeniami ESD i szerokim zakresem napięć zasilania.</p>
+				<p>Projekt zaczął się jako domowe DIY, które – jak przyznaje jego autor – szybko wymknęło się spod kontroli: Raspberry Pi, Arduino, Domoticz, potem także Home Assistant i kilometry skrętki. Bramka RS485 to pierwszy z modułów systemu; zanim powstała jej finalna wersja, przeszła kilka prototypów.</p>
+				<p>W CodeGarage pomagałem przy tym projekcie na wczesnym etapie, po stronie oprogramowania: rozwijałem w C++ oprogramowanie do sterowania domem oparte na Domoticzu, pracując na Linuksie.</p>
+				<div class="more-links"><p>Więcej o projekcie pisze jego autor na blogu Leniwiec.org:</p><ul><li><a href="https://www.leniwiec.org/2021/12/17/inteligentny-dom-diy-projekt-wymknal-sie-spod-kontroli/" target="_blank" rel="noopener">Inteligentny dom DIY – projekt wymknął się spod kontroli</a></li><li><a href="https://www.leniwiec.org/2022/01/04/bramka-rs485-mysensors-inteligentny-dom-diy-po-kablu/" target="_blank" rel="noopener">Bramka RS485 MySensors – inteligentny dom DIY po kablu</a></li></ul></div>
+				<p class="note">Schemat jest poglądowy. Zrzut ekranu poniżej pokazuje, jak wygląda Domoticz w użyciu, ale nie pochodzi z tej instalacji.</p>
+				</div>
+				<div class="project-cover"><img src="/images/thumbs/domoticz-schemat-960.webp" alt="" /></div>
+			</div>
+		</section>
+		<section class="gallery">
+			<div class="wrap">
+				<h2>Zrzuty ekranu</h2>
+				<div class="shots">
+					<a href="/images/domoticz/blockly.png" target="_blank" rel="noopener"><img src="/images/thumbs/domoticz-blockly-720.webp" alt="Zrzut ekranu 1 z Inteligentny dom" loading="lazy" /></a>
+				</div>
+				<p class="credit gallery-credit"><a href="https://commons.wikimedia.org/wiki/File:Domoticz_Event_AllesOn_-2018-6-5_Domoticz.png" target="_blank" rel="noopener">Zrzut ekranu Domoticza: PeterRozenveld, Wikimedia Commons, CC BY-SA 4.0</a></p>
+			</div>
+		</section>
+		<section class="more">
+			<div class="wrap">
+				<h2>Zobacz też</h2>
+				<div class="tiles">
+				<a class="tile" href="/civduel.html">
+					<span class="tile-img"><img src="/images/thumbs/civduel-civduel1-960.webp" alt="" loading="lazy" /></span>
+					<span class="tile-body">
+						<span class="tile-name">Civilization Duel</span>
+						<span class="tile-line">Karcianka strategiczna o władzę nad światem</span>
+						<span class="chip chip--play">Graj w przeglądarce</span>
+					</span>
+				</a>
+				<a class="tile" href="/zenithrush.html">
+					<span class="tile-img"><img src="/images/thumbs/zenithrush-zenith1-960.webp" alt="" loading="lazy" /></span>
+					<span class="tile-body">
+						<span class="tile-name">Zenith Rush</span>
+						<span class="tile-line">Wyścigi na czas, ulepszenia i nowe auta do odblokowania</span>
+						<span class="chip chip--play">Graj w przeglądarce</span>
+					</span>
+				</a>
+				<a class="tile" href="/carintime.html">
+					<span class="tile-img"><img src="/images/thumbs/carintime-carintime0-960.webp" alt="" loading="lazy" /></span>
+					<span class="tile-body">
+						<span class="tile-name">Chrono Drive</span>
+						<span class="tile-line">Samochodówka, w której manipulujesz czasem</span>
+						<span class="chip chip--play">Graj w przeglądarce</span>
+					</span>
+				</a>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="footer" id="kontakt">
+		<div class="wrap">
+			<div>
+				<h2>Masz pomysł albo pytanie?</h2>
+				<p>Napisz, chętnie odpowiem.</p>
+			</div>
+			<ul class="socials">
+				<li><a class="social" href="#kontakt" data-u="atzcop.kilahcim.zsuetam" data-d="moc.liamg" aria-label="Napisz maila" title="Napisz maila"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a></li>
+				<li><a class="social" href="https://www.youtube.com/channel/UCTquNp9Y1NekVNhJ2daFtcA" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .6 12a31 31 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-4.8 31 31 0 0 0-.4-4.8zM9.7 15.1V8.9l5.8 3.1-5.8 3.1z"/></svg></a></li>
+				<li><a class="social" href="https://github.com/MateMich" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a></li>
+			</ul>
+		</div>
+	</footer>
+	<script>
+		document.querySelectorAll('[data-u]').forEach(function (a) {
+			a.addEventListener('click', function (ev) {
+				ev.preventDefault();
+				var r = function (s) { return s.split('').reverse().join(''); };
+				location.href = 'mailto:' + r(a.dataset.u) + '@' + r(a.dataset.d);
+			});
+		});
+	</script>
+</body>
+</html>

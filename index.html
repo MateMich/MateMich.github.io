@@ -1,263 +1,271 @@
-<!DOCTYPE HTML>
-<!--
-	Epilogue by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
-<html>
-
+<!DOCTYPE html>
+<html lang="pl">
 <head>
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8J2FPZWNWB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-8J2FPZWNWB');
-</script>
-
-	<title>Dzień Dobry!</title>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-8J2FPZWNWB"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-8J2FPZWNWB');
+	</script>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="assets/css/main.css?v=51" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+	<title>Mateusz Michalik – gry i aplikacje</title>
+	<meta name="description" content="Gry w przeglądarce i na telefon, kalkulatory i strony www. Kolekcja projektów Mateusza Michalika – wybierz coś i pograj." />
+	<meta name="author" content="Mateusz Michalik" />
+	<link rel="canonical" href="https://matemich.github.io/" />
+	<meta property="og:type" content="website" />
+	<meta property="og:locale" content="pl_PL" />
+	<meta property="og:url" content="https://matemich.github.io/" />
+	<meta property="og:title" content="Mateusz Michalik – gry i aplikacje" />
+	<meta property="og:description" content="Gry w przeglądarce i na telefon, kalkulatory i strony www. Kolekcja projektów Mateusza Michalika – wybierz coś i pograj." />
+	<meta property="og:image" content="https://matemich.github.io/images/civduel/civduel1.png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;display=swap" />
+	<link rel="stylesheet" href="/assets/site.css?v=12" />
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+	<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 	<script>
-		// Wyłączenie cache dla zapytań AJAX/jQuery, aby zmiany ładowały się natychmiast
-		$.ajaxSetup({ cache: false });
-
-		setIndexMenu();
-
-		var menuElements = [
-			{ menuName: "index_menu", title: "Dzień Dobry!", description: "Strona ta, zawiera kolekcję moich aplikacji i projektów", link: "index_content.html" },
-			{ menuName: "inne_menu", title: "Projekty komercyjne", description: "Projekty komercyjne", link: "inne.html" },
-			{ menuName: "moje_projekty_menu", title: "Moje Projekty", description: "Kolekcja moich autorskich gier i aplikacji", link: "moje_projekty.html" },
-			{ menuName: "civduel_menu", title: "Civilization Duel", description: "Zostań władcą świata!", link: "civduel.html" },
-			{ menuName: "ilenetto_menu", title: "IleNetto", description: "Kalkulator wynagrodzeń B2B i UoP", link: "ilenetto.html" },
-			{ menuName: "zenithrush_menu", title: "Zenith Rush", description: "Pobijaj czas!", link: "zenithrush.html" },
-			{ menuName: "carintime_menu", title: "Chrono Drive", description: "Manipuluj czasem!", link: "carintime.html" },
-			{ menuName: "janusz_menu", title: "Janusz: Misja Passat", description: "Uzbieraj Na Passata!", link: "janusz.html" },
-			{ menuName: "rebounce_menu", title: "ReBounce", description: "Skacz jak najdłużej!", link: "rebounce.html" },
-			{ menuName: "spaceshift_menu", title: "SpaceShift", description: "Przemierzaj odległe galaktyki!", link: "spaceshift.html" },
-			{ menuName: "komuwinien_menu", title: "Komu Winien?", description: "Komu jestem winien, a kto mi?", link: "komuwinien.html" },
-			{ menuName: "uczenie_menu", title: "Uczenie Parkowania", description: "Nauka parkowania na bazie 2 algorytmów", link: "uczenie.html" },
-			//{ menuName: "wykrywanie_menu", title: "Wykrywanie Twarzy", description: "Wykrywanie twarzy z systemem logowania", link: "detekcja.html" }, 
-			{ menuName: "mniejsze_menu", title: "Inne", description: "Inne Projekty", link: "mniejsze.html" },
-		];
-
-		var menuToNavMap = {
-			"index_menu": "index_menu",
-			"inne_menu": "inne_menu",
-			"moje_projekty_menu": "moje_projekty_menu",
-			"civduel_menu": "moje_projekty_menu",
-			"ilenetto_menu": "moje_projekty_menu",
-			"zenithrush_menu": "moje_projekty_menu",
-			"carintime_menu": "moje_projekty_menu",
-			"janusz_menu": "moje_projekty_menu",
-			"rebounce_menu": "moje_projekty_menu",
-			"spaceshift_menu": "moje_projekty_menu",
-			"komuwinien_menu": "moje_projekty_menu",
-			"uczenie_menu": "moje_projekty_menu",
-			"mniejsze_menu": "moje_projekty_menu"
-		};
-
-		function setIndexMenu() {
-			updateMenu("index_menu");
+		// Facebook dokleja ?fbclid=… do linków – usuń go z paska adresu
+		if (location.search.indexOf('fbclid=') > -1) {
+			var u = new URL(location.href);
+			u.searchParams.delete('fbclid');
+			history.replaceState(null, '', u.pathname + u.search + u.hash);
 		}
-
-		function setInneMenu() {
-			updateMenu("inne_menu");
-		}
-
-		function setMojeProjektyMenu() {
-			updateMenu("moje_projekty_menu");
-		}
-
-		function setCivDuelMenu() {
-			updateMenu("civduel_menu");
-		}
-
-		function setIlenettoMenu() {
-			updateMenu("ilenetto_menu");
-		}
-
-		function setZenithrushMenu() {
-			updateMenu("zenithrush_menu");
-		}
-
-		function setCarintimeMenu() {
-			updateMenu("carintime_menu");
-		}
-
-		function setJanuszMenu() {
-			updateMenu("janusz_menu");
-		}
-
-		function setRebounceMenu() {
-			updateMenu("rebounce_menu");
-		}
-
-		function setSpaceshiftMenu() {
-			updateMenu("spaceshift_menu");
-		}
-
-		function setKomuwinienMenu() {
-			updateMenu("komuwinien_menu");
-		}
-
-		function setUczenieMenu() {
-			updateMenu("uczenie_menu");
-		}
-
-		function setWykrywanieMenu() {
-			updateMenu("wykrywanie_menu");
-		}
-
-		function setMniejszeMenu() {
-			updateMenu("mniejsze_menu");
-		}
-
-		var latestNavElement = "index_menu";
-
-		function updateMenu(activeMenuElement) {
-			console.log("fadeout");
-			$(document).ready(function () {
-				$("#wrapper, #nazwa, #opis, #footer").slideUp("slow", function() {
-					setMenuElements(activeMenuElement);
-				});
-			});
-		}
-
-		function setMenuElements(activeMenuElement) {
-			var activeNavElement = menuToNavMap[activeMenuElement] || "moje_projekty_menu";
-			$("#" + latestNavElement).removeClass("current_page_item");
-			latestNavElement = activeNavElement;
-			$("#" + activeNavElement).addClass("current_page_item");
-
-			menuElements.forEach(element => {
-				if (activeMenuElement === element.menuName) {
-					$("#nazwa").text(element.title);
-					$("#opis").html(element.description);
-					$("#wrapper").load(element.link + "?_ts=" + new Date().getTime(), function() {
-						if ($(this).find('.mySlides').length) {
-							showSlides(1);
-						}
-					});
-				}
-			});
-
-			$("#wrapper, #nazwa, #opis, #footer").delay(150).slideDown();
-			console.log("fade in");
-		}
-
-		function showDropdown() {
-			var x = document.getElementById("menu");
-			if (x.className === "") {
-				x.className += " responsive";
-			} else {
-				x.className = "";
-			}
-		}
-
-		// Mobile click toggle dropdown logic
-		$(document).ready(function() {
-			$(document).on('click', '.dropdown', function(e) {
-				if (window.innerWidth <= 1050) {
-					var target = $(e.target);
-					if (target.hasClass('dropbtn') || target.parent().hasClass('dropbtn')) {
-						e.preventDefault();
-						e.stopPropagation();
-						$(this).find('.dropdown-content').slideToggle(300);
-					}
-				}
+	</script>
+</head>
+<body>
+	<a class="skip" href="#tresc">Przejdź do treści</a>
+	<header class="topbar">
+		<div class="wrap">
+			<a class="wordmark" href="/">Mateusz Michalik</a>
+			<nav aria-label="Nawigacja">
+				<a href="#graj">Gry</a>
+				<a href="#web">Aplikacje</a>
+				<a href="#youtube">YouTube</a>
+				<a href="#kontakt">Kontakt</a>
+			</nav>
+		</div>
+	</header>
+	<main id="tresc">
+		<section class="hero">
+			<div class="wrap">
+				<div>
+					<h1>Cześć, tu Mateusz</h1>
+					<p class="lead">Po godzinach dłubię w grach i różnych apkach, a potem wrzucam je tutaj. Część odpalisz od razu w przeglądarce, część to starsze rzeczy na telefon. Klikaj śmiało, a jak coś nie działa, daj znać.</p>
+					<div class="hero-actions">
+						<a class="btn" href="#graj">Zagraj w coś</a>
+					</div>
+				</div>
+				<div class="stickers" aria-label="Wybrane projekty">
+				<a class="sticker" href="/civduel.html"><img src="/images/thumbs/civduel-civduel1-640.webp" alt="" /><span>Civilization Duel</span></a>
+				<a class="sticker" href="/carintime.html"><img src="/images/thumbs/carintime-carintime0-640.webp" alt="" /><span>Chrono Drive</span></a>
+				<a class="sticker" href="/zenithrush.html"><img src="/images/thumbs/zenithrush-zenith1-640.webp" alt="" /><span>Zenith Rush</span></a>
+				<a class="sticker" href="/ilenetto.html"><img src="/images/thumbs/ilenetto-ilenetto1-640.webp" alt="" /><span>IleNetto</span></a>
+				</div>
+			</div>
+		</section>
+		<section class="section" id="graj">
+			<div class="wrap">
+				<div class="section-head">
+					<h2>Zagraj w przeglądarce</h2>
+					<p>Bez instalowania. Kliknij i grasz.</p>
+				</div>
+				<div class="tiles tiles--big">
+				<a class="tile" href="/civduel.html">
+					<span class="tile-img"><img src="/images/thumbs/civduel-civduel1-960.webp" alt="" loading="lazy" /></span>
+					<span class="tile-body">
+						<span class="tile-name">Civilization Duel</span>
+						<span class="tile-line">Karcianka strategiczna o władzę nad światem</span>
+						<span class="chip chip--play">Graj w przeglądarce</span>
+					</span>
+				</a>
+				<a class="tile" href="/zenithrush.html">
+					<span class="tile-img"><img src="/images/thumbs/zenithrush-zenith1-960.webp" alt="" loading="lazy" /></span>
+					<span class="tile-body">
+						<span class="tile-name">Zenith Rush</span>
+						<span class="tile-line">Wyścigi na czas, ulepszenia i nowe auta do odblokowania</span>
+						<span class="chip chip--play">Graj w przeglądarce</span>
+					</span>
+				</a>
+				<a class="tile" href="/carintime.html">
+					<span class="tile-img"><img src="/images/thumbs/carintime-carintime0-960.webp" alt="" loading="lazy" /></span>
+					<span class="tile-body">
+						<span class="tile-name">Chrono Drive</span>
+						<span class="tile-line">Samochodówka, w której manipulujesz czasem</span>
+						<span class="chip chip--play">Graj w przeglądarce</span>
+					</span>
+				</a>
+				<a class="tile" href="/spaceshift.html">
+					<span class="tile-img"><img src="/images/thumbs/spaceshift-spaceshift0-960.webp" alt="" loading="lazy" /></span>
+					<span class="tile-body">
+						<span class="tile-name">SpaceShift</span>
+						<span class="tile-line">Leć jak najdalej przez kolejne strefy galaktyki</span>
+						<span class="chip chip--play">Graj w przeglądarce</span>
+					</span>
+				</a>
+				</div>
+			</div>
+		</section>
+		<section class="section section--band" id="telefon">
+			<div class="wrap">
+				<div class="section-head">
+					<h2>Do pobrania i archiwum</h2>
+					<p>Janusz czeka na itch.io. ReBounce i Komu Winien zniknęły już z Google Play, zostały zrzuty ekranu.</p>
+				</div>
+				<div class="tiles">
+				<a class="tile" href="/janusz.html">
+					<span class="tile-img"><img src="/images/thumbs/janusz-janusz1-960.webp" alt="" loading="lazy" /></span>
+					<span class="tile-body">
+						<span class="tile-name">Janusz: Misja Passat</span>
+						<span class="tile-line">Uzbieraj 200 cebulionów na Passata w 30 dni</span>
+						<span class="chip chip--look">itch.io</span>
+					</span>
+				</a>
+				<a class="tile" href="/rebounce.html">
+					<span class="tile-img"><img src="/images/thumbs/rebounce-rebounce0-960.webp" alt="" loading="lazy" /></span>
+					<span class="tile-body">
+						<span class="tile-name">ReBounce</span>
+						<span class="tile-line">Odbijaj piłkę od platform tak długo, jak dasz radę</span>
+						<span class="chip chip--look">Archiwum</span>
+					</span>
+				</a>
+				<a class="tile" href="/komuwinien.html">
+					<span class="tile-img"><img src="/images/thumbs/komuwinien-komuwinien0-960.webp" alt="" loading="lazy" /></span>
+					<span class="tile-body">
+						<span class="tile-name">Komu Winien?</span>
+						<span class="tile-line">Apka, która pilnuje, kto komu ile jest winien</span>
+						<span class="chip chip--look">Archiwum</span>
+					</span>
+				</a>
+				</div>
+			</div>
+		</section>
+		<section class="section" id="web">
+			<div class="wrap">
+				<div class="section-head">
+					<h2>Strony i narzędzia</h2>
+					<p>Rzeczy, z których można po prostu korzystać.</p>
+				</div>
+				<div class="tiles">
+				<a class="tile" href="https://postawstrone.pl/" target="_blank" rel="noopener">
+					<span class="tile-img"><img src="/images/thumbs/postawstrone-960.webp" alt="" loading="lazy" /></span>
+					<span class="tile-body">
+						<span class="tile-name">PostawStrone.pl</span>
+						<span class="tile-line">Strony www dla małych firm, z szablonami i działającymi demami</span>
+						<span class="chip chip--web">Otwórz</span>
+					</span>
+				</a>
+				<a class="tile" href="https://cenykart.pl/" target="_blank" rel="noopener">
+					<span class="tile-img"><img src="/images/thumbs/cenykart-960.webp" alt="" loading="lazy" /></span>
+					<span class="tile-body">
+						<span class="tile-name">CenyKart.pl</span>
+						<span class="tile-line">Porównywarka cen kart kolekcjonerskich z ponad 40 sklepów</span>
+						<span class="chip chip--web">Otwórz</span>
+					</span>
+				</a>
+				<a class="tile" href="/ilenetto.html">
+					<span class="tile-img"><img src="/images/thumbs/ilenetto-ilenetto1-960.webp" alt="" loading="lazy" /></span>
+					<span class="tile-body">
+						<span class="tile-name">IleNetto</span>
+						<span class="tile-line">Kalkulator wynagrodzeń: UoP, B2B, ZUS i podatki</span>
+						<span class="chip chip--web">Otwórz</span>
+					</span>
+				</a>
+				</div>
+			</div>
+		</section>
+		<section class="section section--dark" id="zawodowo">
+			<div class="wrap">
+				<div class="section-head">
+					<h2>Projekty, przy których pracowałem</h2>
+					<p>Gry VR na Steamie, wieloosobowe symulacje VR, interaktywne atrakcje w parkach rozrywki, gry mobilne i trochę inteligentnego domu. Do tych rzeczy dokładałem swoją cegiełkę zawodowo.</p>
+				</div>
+				<div class="shelf">
+					<a href="https://store.steampowered.com/app/503770/Elven_Assassin/" target="_blank" rel="noopener"><img src="https://steamcdn-a.akamaihd.net/steam/apps/503770/header.jpg?t=1575530876" alt="" loading="lazy" /><strong>Elven Assassin</strong><small>Sieciowa gra VR: bronisz wioski przed hordami orków</small><span class="chip chip--look">Steam</span></a>
+					<a href="https://store.steampowered.com/app/778250/Battle_of_Kings_VR/" target="_blank" rel="noopener"><img src="https://steamcdn-a.akamaihd.net/steam/apps/778250/header.jpg?t=1575542895" alt="" loading="lazy" /><strong>Battle of Kings VR</strong><small>Tower defense w VR, z trybem PvP</small><span class="chip chip--look">Steam</span></a>
+					<a href="https://juraparkbaltow.pl/atrakcje/adventure-planet/" target="_blank" rel="noopener"><img src="https://juraparkbaltow.pl/wp-content/uploads/2024/08/Adventure-Planet.png.webp" alt="" loading="lazy" /><strong>Adventure Planet</strong><small>Wyprawa w VR do świata dinozaurów w JuraParku Bałtów</small><span class="chip chip--look">Strona parku</span></a>
+					<a href="https://www.seapark.pl/foczka-nina" target="_blank" rel="noopener"><img src="https://www.seapark.pl/img/atrakcje/25.jpg" alt="" loading="lazy" /><strong>Foczka Nina</strong><small>Interaktywna atrakcja o morskich zwierzętach w Sea Parku</small><span class="chip chip--look">Strona parku</span></a>
+					<a href="https://www.facebook.com/intobeyond.game/" target="_blank" rel="noopener"><img src="/images/thumbs/intobeyond-480.webp" alt="" loading="lazy" /><strong>Into BeYond</strong><small>Mobilna gra RPG akcji w mistycznym świecie</small><span class="chip chip--look">Facebook</span></a>
+					<a href="/inteligentny-dom.html"><img src="/images/thumbs/domoticz-schemat-480.webp" alt="" loading="lazy" /><strong>Inteligentny dom</strong><small>Przewodowy inteligentny dom DIY na Domoticzu: Raspberry Pi, Arduino i moduły MySensors po RS485. Pomagałem przy oprogramowaniu na wczesnym etapie.</small><span class="chip chip--look">Zobacz projekt</span></a>
+					<div class="gone"><img src="/images/thumbs/downhill-480.webp" alt="" loading="lazy" /><strong>MTB Downhill Simulator</strong><small>Zjazdy na czas i akrobacje na rowerze. Gry nie ma już w App Store.</small><span class="chip chip--gone">Niedostępna</span></div>
+				</div>
+			</div>
+		</section>
+		<section class="section" id="lab">
+			<div class="wrap">
+				<div class="section-head">
+					<h2>Eksperymenty</h2>
+					<p>Projekty, na których się uczyłem, w tym praca magisterska.</p>
+				</div>
+				<div class="tiles">
+				<a class="tile" href="/uczenie.html">
+					<span class="tile-img"><img src="/images/thumbs/uczenie-uczenie0-960.webp" alt="" loading="lazy" /></span>
+					<span class="tile-body">
+						<span class="tile-name">Uczenie parkowania</span>
+						<span class="tile-line">Sieci neuronowe uczą się parkować: GA kontra PPO</span>
+						<span class="chip chip--file">Do pobrania</span>
+					</span>
+				</a>
+				<a class="tile" href="https://matemich.github.io/faceDetector" target="_blank" rel="noopener">
+					<span class="tile-img"><img src="/images/thumbs/detekcja-detekcja0-960.webp" alt="" loading="lazy" /></span>
+					<span class="tile-body">
+						<span class="tile-name">Wykrywanie twarzy</span>
+						<span class="tile-line">Detekcja twarzy z rejestracją i logowaniem do konta w chmurze</span>
+						<span class="chip chip--web">Otwórz</span>
+					</span>
+				</a>
+				<a class="tile" href="https://matemich.github.io/robofriends" target="_blank" rel="noopener">
+					<span class="tile-img"><img src="https://robohash.org/test2" alt="" loading="lazy" /></span>
+					<span class="tile-body">
+						<span class="tile-name">RoboFriends</span>
+						<span class="tile-line">Moje pierwsze kroki w React: lista pobierana z API</span>
+						<span class="chip chip--web">Otwórz</span>
+					</span>
+				</a>
+				</div>
+			</div>
+		</section>
+		<section class="section section--band" id="youtube">
+			<div class="wrap yt">
+				<div class="yt-text">
+					<h2>Na YouTube gram na ukulele</h2>
+					<p>Na kanale Mateq głównie ukulele w wersji fingerstyle: od Coldplay i Green Day po Edith Piaf, Scotta Joplina i Straussa. Między nimi wpadają devlogi z Unity (tak rodziło się Chrono Drive), jakieś paczki z FIFY i drobne komputerowe porady. Bez spiny, jak znajdę chwilę.</p>
+					<a class="btn" href="https://www.youtube.com/channel/UCTquNp9Y1NekVNhJ2daFtcA" target="_blank" rel="noopener">Zajrzyj na kanał</a>
+				</div>
+				<div class="yt-thumbs">
+					<a href="https://www.youtube.com/watch?v=G9RAOkauEPE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/G9RAOkauEPE/mqdefault.jpg" alt="" loading="lazy" /><span>La Vie En Rose na ukulele</span></a>
+					<a href="https://www.youtube.com/watch?v=6yTu_lrv6zE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/6yTu_lrv6zE/mqdefault.jpg" alt="" loading="lazy" /><span>Clocks (Coldplay) na ukulele</span></a>
+					<a href="https://www.youtube.com/watch?v=BZfMV0aZ2Vg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/BZfMV0aZ2Vg/mqdefault.jpg" alt="" loading="lazy" /><span>Nad pięknym modrym Dunajem na ukulele</span></a>
+					<a href="https://www.youtube.com/watch?v=JPhpEVtM7So" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/JPhpEVtM7So/mqdefault.jpg" alt="" loading="lazy" /><span>Devlog: jak powstawało Chrono Drive</span></a>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="footer" id="kontakt">
+		<div class="wrap">
+			<div>
+				<h2>Masz pomysł albo pytanie?</h2>
+				<p>Napisz, chętnie odpowiem.</p>
+			</div>
+			<ul class="socials">
+				<li><a class="social" href="#kontakt" data-u="atzcop.kilahcim.zsuetam" data-d="moc.liamg" aria-label="Napisz maila" title="Napisz maila"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a></li>
+				<li><a class="social" href="https://www.youtube.com/channel/UCTquNp9Y1NekVNhJ2daFtcA" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .6 12a31 31 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-4.8 31 31 0 0 0-.4-4.8zM9.7 15.1V8.9l5.8 3.1-5.8 3.1z"/></svg></a></li>
+				<li><a class="social" href="https://github.com/MateMich" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a></li>
+			</ul>
+		</div>
+	</footer>
+	<script>
+		document.querySelectorAll('[data-u]').forEach(function (a) {
+			a.addEventListener('click', function (ev) {
+				ev.preventDefault();
+				var r = function (s) { return s.split('').reverse().join(''); };
+				location.href = 'mailto:' + r(a.dataset.u) + '@' + r(a.dataset.d);
 			});
 		});
 	</script>
-
-</head>
-
-<body>
-
-	<div id="menu">		
-			<a id="index_menu" class="current_page_item" onclick="setIndexMenu();">Strona Główna</a>
-			<div class="dropdown">
-				<a id="inne_menu" class="dropbtn">Projekty Komercyjne <i class="fa fa-caret-down"></i></a>
-				<div class="dropdown-content">
-					<a onclick="setInneMenu();" style="font-weight: bold; border-bottom: 2px solid rgba(255,255,255,0.15);">Zobacz wszystkie</a>
-					<a href="https://www.seapark.pl/foczka-nina" target="_blank">Foczka Nina</a>
-					<a href="https://juraparkbaltow.pl/atrakcje/adventure-planet/" target="_blank">Adventure Planet</a>
-					<a href="https://www.facebook.com/intobeyond.game/" target="_blank">Into BeYond</a>
-					<a href="https://store.steampowered.com/app/503770/Elven_Assassin/" target="_blank">Elven Assassin</a>
-					<a href="https://store.steampowered.com/app/778250/Battle_of_Kings_VR/" target="_blank">Battle of Kings</a>
-					<a href="https://apps.apple.com/gb/app/mtb-downhill-simulator-extreme-freeride-bike-3d/id1053989443" target="_blank">MTB Downhill Simulator</a>
-				</div>
-			</div>
-			<div class="dropdown">
-				<a id="moje_projekty_menu" class="dropbtn">Moje Projekty <i class="fa fa-caret-down"></i></a>
-				<div class="dropdown-content">
-					<a onclick="setMojeProjektyMenu();" style="font-weight: bold; border-bottom: 2px solid rgba(255,255,255,0.15);">Zobacz wszystkie</a>
-					<a onclick="setCivDuelMenu();">Civilization Duel</a>
-					<a onclick="setIlenettoMenu();">IleNetto</a>
-					<a onclick="setZenithrushMenu();">Zenith Rush</a>
-					<a onclick="setCarintimeMenu();">Chrono Drive</a>
-					<a onclick="setJanuszMenu();">Janusz: Misja Passat</a>
-					<a onclick="setRebounceMenu();">ReBounce</a>
-					<a onclick="setSpaceshiftMenu();">SpaceShift</a>
-					<a onclick="setKomuwinienMenu();">Komu Winien?</a>
-					<a onclick="setUczenieMenu();">Uczenie parkowania</a>
-					<a onclick="setMniejszeMenu();">Inne projekty</a>
-				</div>
-			</div>
-			
-			<a href="javascript:void(0);" class="icon" onclick="showDropdown()">
-				<i class="fa fa-bars"></i>
-			</a>
-	</div>
-	<script src="assets/js/remove-fbclid.js" async defer></script>
-
-	<!-- Header -->
-	<header id="header" class="alt">
-		<div class="inner">
-			<h1 id="nazwa"></h1>
-			<p id="opis"></p>
-		</div>
-	</header>
-
-
-
-	<!-- Wrapper -->
-	<div id="wrapper">
-
-
-		
-
-		</div>
-
-
-
-		<!-- Footer -->
-		<footer id="footer">
-			<ul class="icons">
-				<li><a href="https://www.youtube.com/channel/UCTquNp9Y1NekVNhJ2daFtcA" class="icon fa-youtube"><span
-					class="label">youtube</span></a></li>
-				<li><a href="mailto:mateusz.michalik.poczta@gmail.com" class="icon fa-envelope"><span
-							class="label">Email</span></a></li>			
-			</ul>
-			<p class="copyright">Zdjęcie nagłówka: <a href="https://unsplash.com/@jupp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jonathan Kemper</a>.</p>
-
-		</footer>
-
-	</div>
-
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-	<script src="assets/js/slideshow.js"></script>
-
 </body>
-
 </html>

@@ -23,11 +23,16 @@
 		// Disable animations/transitions until the page has loaded.
 			$body.addClass('is-loading');
 
-			$window.on('load', function() {
+			// jQuery 3 może wywołać ready już po zdarzeniu load – wtedy zdejmij klasę od razu.
+			var removeLoading = function() {
 				window.setTimeout(function() {
 					$body.removeClass('is-loading');
 				}, 100);
-			});
+			};
+			if (document.readyState === 'complete')
+				removeLoading();
+			else
+				$window.on('load', removeLoading);
 
 		// Fix: Placeholder polyfill.
 			$('form').placeholder();

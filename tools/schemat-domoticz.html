@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- Źródło grafiki images/domoticz/schemat.png (własny schemat poglądowy).
+     Render: msedge --headless --window-size=1280,800 --screenshot=images\domoticz\schemat.png <ten plik> -->
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" />
+<style>
+	html, body { margin: 0; background: #eef2fb; }
+	svg { display: block; font-family: "Bricolage Grotesque", sans-serif; }
+	.t { fill: #171c33; font-weight: 800; }
+	.s { fill: #535b7a; font-weight: 500; }
+	.w { fill: #ffffff; font-weight: 800; }
+	.wl { fill: #dbe3ff; font-weight: 500; }
+</style>
+</head>
+<body>
+<svg width="1280" height="800" viewBox="0 0 1280 800" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+			<circle cx="2" cy="2" r="1.3" fill="#d6ddef"/>
+		</pattern>
+		<pattern id="rail" width="16" height="22" patternUnits="userSpaceOnUse">
+			<rect width="16" height="22" fill="#c4cbe0"/>
+			<rect x="10" y="5" width="3" height="12" rx="1.5" fill="#aab3cf"/>
+		</pattern>
+		<filter id="sh" x="-20%" y="-20%" width="140%" height="160%">
+			<feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#171c33" flood-opacity="0.18"/>
+		</filter>
+	</defs>
+	<rect width="1280" height="800" fill="url(#dots)"/>
+
+	<!-- Tytuł -->
+	<text x="470" y="150" class="t" font-size="60" letter-spacing="-1.5">Inteligentny dom po kablu</text>
+	<text x="472" y="196" class="s" font-size="24">Schemat poglądowy systemu</text>
+
+	<!-- Panel www -->
+	<g filter="url(#sh)">
+		<rect x="80" y="100" width="345" height="120" rx="18" fill="#ffffff"/>
+	</g>
+	<rect x="108" y="128" width="64" height="44" rx="6" fill="none" stroke="#171c33" stroke-width="4"/>
+	<path d="M98 180h84" stroke="#171c33" stroke-width="5" stroke-linecap="round"/>
+	<text x="196" y="152" class="t" font-size="26">Panel Domoticza</text>
+	<text x="196" y="184" class="s" font-size="19">przeglądarka, telefon</text>
+
+	<!-- Połączenie panel – centrala -->
+	<path d="M225 220v118" stroke="#171c33" stroke-width="4" stroke-dasharray="2 12" stroke-linecap="round"/>
+	<text x="242" y="290" class="s" font-size="19">sieć domowa</text>
+
+	<!-- Centrala -->
+	<g filter="url(#sh)">
+		<rect x="80" y="340" width="290" height="160" rx="18" fill="#2e56e6"/>
+	</g>
+	<rect x="108" y="372" width="50" height="50" rx="8" fill="none" stroke="#ffffff" stroke-width="4"/>
+	<path d="M120 372v-10M133 372v-10M146 372v-10M120 432v-10M133 432v-10M146 432v-10M108 384h-10M108 397h-10M108 410h-10M158 384h10M158 397h10M158 410h10" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+	<text x="186" y="394" class="w" font-size="27">Raspberry Pi</text>
+	<text x="186" y="426" class="wl" font-size="20">centrala</text>
+	<text x="108" y="474" class="w" font-size="24">Domoticz</text>
+
+	<!-- Ethernet -->
+	<path d="M370 420h100" stroke="#171c33" stroke-width="6" stroke-linecap="round"/>
+	<text x="378" y="404" class="s" font-size="19">Ethernet</text>
+
+	<!-- Bramka na szynie DIN -->
+	<rect x="440" y="508" width="350" height="24" rx="4" fill="url(#rail)"/>
+	<text x="440" y="566" class="s" font-size="19">szyna DIN</text>
+	<g filter="url(#sh)">
+		<rect x="470" y="352" width="290" height="156" rx="16" fill="#ffffff"/>
+	</g>
+	<rect x="470" y="352" width="290" height="156" rx="16" fill="none" stroke="#171c33" stroke-width="3"/>
+	<circle cx="736" cy="378" r="7" fill="#1fae7a"/>
+	<text x="494" y="404" class="t" font-size="27">Bramka</text>
+	<text x="494" y="436" class="s" font-size="20">Ethernet ↔ RS485</text>
+	<text x="494" y="466" class="s" font-size="20">MySensors, ochrona ESD</text>
+
+	<!-- Magistrala RS485 -->
+	<path d="M760 420H1214" stroke="#ffc83d" stroke-width="12" stroke-linecap="round"/>
+	<text x="806" y="398" class="t" font-size="22">magistrala RS485 (skrętka)</text>
+
+	<!-- Moduły -->
+	<g>
+		<path d="M880 426v118M1030 426v118M1180 426v118" stroke="#ffc83d" stroke-width="7" stroke-linecap="round"/>
+		<g filter="url(#sh)">
+			<rect x="812" y="544" width="136" height="120" rx="14" fill="#ffffff"/>
+			<rect x="962" y="544" width="136" height="120" rx="14" fill="#ffffff"/>
+			<rect x="1112" y="544" width="136" height="120" rx="14" fill="#ffffff"/>
+		</g>
+		<g class="t" font-size="22">
+			<text x="880" y="598" text-anchor="middle">Arduino</text>
+			<text x="1030" y="598" text-anchor="middle">Arduino</text>
+			<text x="1180" y="598" text-anchor="middle">Arduino</text>
+		</g>
+		<g class="s" font-size="17">
+			<text x="880" y="628" text-anchor="middle">moduł</text>
+			<text x="1030" y="628" text-anchor="middle">moduł</text>
+			<text x="1180" y="628" text-anchor="middle">moduł</text>
+			<text x="880" y="650" text-anchor="middle">MySensors</text>
+			<text x="1030" y="650" text-anchor="middle">MySensors</text>
+			<text x="1180" y="650" text-anchor="middle">MySensors</text>
+		</g>
+	</g>
+	<text x="1248" y="712" class="s" font-size="19" text-anchor="end">czujniki i urządzenia w domu</text>
+</svg>
+</body>
+</html>
