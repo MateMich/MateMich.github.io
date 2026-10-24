@@ -330,8 +330,7 @@ SKILLS = [
 ]
 
 CERTS = [
-    ("Google IT Support (Professional Certificate), 2026", "/assets/other/Coursera S2ZU3OGMK8P3.pdf"),
-    ("The Bits and Bytes of Computer Networking, 2026", "/assets/other/Coursera 2MDFTS8RL48T.pdf"),
+    ("Google IT Support (Professional Certificate)", "/assets/other/Coursera S2ZU3OGMK8P3.pdf"),
     ("Complete SQL Mastery", "/assets/other/certificate-of-completion-for-complete-sql-mastery.pdf"),
 ]
 
