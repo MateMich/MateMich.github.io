@@ -759,7 +759,6 @@ def build_portfolio():
 				<li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
 				<li><a href="{GITHUB}" target="_blank" rel="noopener">GitHub</a></li>
 			</ul>
-			<p class="small no-print">Chętnie podeślę CV w PDF – wystarczy napisać maila.</p>
 		</aside>
 		<aside class="cv-skillbox" aria-label="Umiejętności">
 {skills}
