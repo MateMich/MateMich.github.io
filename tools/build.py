@@ -758,7 +758,6 @@ def build_portfolio():
 			<ul class="cv-contact">
 				<li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
 				<li><a href="{GITHUB}" target="_blank" rel="noopener">GitHub</a></li>
-				<li><a href="{YOUTUBE}" target="_blank" rel="noopener">YouTube</a></li>
 			</ul>
 			<p class="small no-print">Chętnie podeślę CV w PDF – wystarczy napisać maila.</p>
 		</aside>
