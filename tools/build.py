@@ -311,6 +311,18 @@ EXPERIENCE = [
 ]
 
 OWN_FOR_CV = [
+    dict(name="Civilization Duel", url="/civduel.html", img="/images/civduel/civduel1.png",
+         line="Karcianka strategiczna o władzę nad światem: gra online, z AI lub lokalnie, w przeglądarce."),
+    dict(name="Zenith Rush", url="/zenithrush.html", img="/images/zenithrush/zenith1.png",
+         line="Wyścigi na czas z ulepszeniami i odblokowywaniem nowych aut, grywalne w przeglądarce."),
+    dict(name="Chrono Drive", url="/carintime.html", img="/images/carintime/carintime0.png",
+         line="Samochodówka, w której manipulujesz czasem: pojazdy i bramy poruszają się razem z graczem."),
+    dict(name="SpaceShift", url="/spaceshift.html", img="/images/spaceshift/spaceshift0.png",
+         line="Gra zręcznościowa: lot przez kolejne strefy galaktyki z własnymi przeszkodami."),
+    dict(name="ReBounce", url="/rebounce.html", img="/images/rebounce/rebounce0.png",
+         line="Mobilna gra zręcznościowa: odbijanie piłki od platform, opublikowana w Google Play."),
+    dict(name="Janusz: Misja Passat", url="/janusz.html", img="/images/janusz/janusz1.jpg",
+         line="Gra mobilna o zbieraniu na Passata w 30 dni, współtworzona z Barteboj."),
     dict(name="CenyKart.pl", url="https://cenykart.pl/", img="/images/cenykart.png",
          line="Porównywarka cen kart kolekcjonerskich: oferty z ponad 40 sklepów, kalendarz premier i historia cen."),
     dict(name="PostawStrone.pl", url="https://postawstrone.pl/", img="/images/postawstrone.png",
@@ -326,12 +338,12 @@ SKILLS = [
     ("Języki", ["C# (.NET)", "C++", "SQL", "JavaScript", "HTML/CSS", "Python", "VBA", "Bash"]),
     ("Silniki i narzędzia", ["Unity", "Unreal Engine", "Unity Netcode", "Photon", "OpenXR", "LINQ", "REST API", "JSON", "Git", "Sourcetree", "TortoiseSVN"]),
     ("Bazy i systemy", ["SQLite", "Oracle", "Linux", "TCP/IP", "VPN", "Active Directory (podstawy)", "ITSM", "WMS"]),
+    ("AI programming", ["Claude Code", "ChatGPT", "Antigravity", "MCP"]),
     ("Praca", ["SOLID, KISS, DRY", "wzorce projektowe", "Agile/Scrum", "Jira"]),
 ]
 
 CERTS = [
-    ("Google IT Support (Professional Certificate), 2026", "/assets/other/Coursera S2ZU3OGMK8P3.pdf"),
-    ("The Bits and Bytes of Computer Networking, 2026", "/assets/other/Coursera 2MDFTS8RL48T.pdf"),
+    ("Google IT Support (Professional Certificate)", "/assets/other/Coursera S2ZU3OGMK8P3.pdf"),
     ("Complete SQL Mastery", "/assets/other/certificate-of-completion-for-complete-sql-mastery.pdf"),
 ]
 
