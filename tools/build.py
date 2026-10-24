@@ -311,6 +311,15 @@ EXPERIENCE = [
 ]
 
 OWN_FOR_CV = [
+    dict(name="CenyKart.pl", url="https://cenykart.pl/", img="/images/cenykart.png",
+         line="Porównywarka cen kart kolekcjonerskich: oferty z ponad 40 sklepów, kalendarz premier i historia cen."),
+    dict(name="PostawStrone.pl", url="https://postawstrone.pl/", img="/images/postawstrone.png",
+         line="Usługa tworzenia stron dla małych firm, z szablonami branżowymi, konfiguratorem i działającymi demami."),
+    dict(name="IleNetto", url="/ilenetto.html", img="/images/ilenetto/ilenetto1.png",
+         line="Kalkulator wynagrodzeń UoP i B2B: podatki i składki ZUS."),
+    dict(name="Uczenie parkowania", url="/uczenie.html", img="/images/uczenie/uczenie0.png",
+         line="Praca magisterska: porównanie algorytmów GA i PPO w uczeniu sieci neuronowych jazdy i parkowania.",
+         tech="Unity, Python"),
     dict(name="Civilization Duel", url="/civduel.html", img="/images/civduel/civduel1.png",
          line="Karcianka strategiczna o władzę nad światem: gra online, z AI lub lokalnie, w przeglądarce."),
     dict(name="Zenith Rush", url="/zenithrush.html", img="/images/zenithrush/zenith1.png",
@@ -323,15 +332,6 @@ OWN_FOR_CV = [
          line="Mobilna gra zręcznościowa: odbijanie piłki od platform, opublikowana w Google Play."),
     dict(name="Janusz: Misja Passat", url="/janusz.html", img="/images/janusz/janusz1.jpg",
          line="Gra mobilna o zbieraniu na Passata w 30 dni, współtworzona z Barteboj."),
-    dict(name="CenyKart.pl", url="https://cenykart.pl/", img="/images/cenykart.png",
-         line="Porównywarka cen kart kolekcjonerskich: oferty z ponad 40 sklepów, kalendarz premier i historia cen."),
-    dict(name="PostawStrone.pl", url="https://postawstrone.pl/", img="/images/postawstrone.png",
-         line="Usługa tworzenia stron dla małych firm, z szablonami branżowymi, konfiguratorem i działającymi demami."),
-    dict(name="IleNetto", url="/ilenetto.html", img="/images/ilenetto/ilenetto1.png",
-         line="Kalkulator wynagrodzeń UoP i B2B: podatki i składki ZUS."),
-    dict(name="Uczenie parkowania", url="/uczenie.html", img="/images/uczenie/uczenie0.png",
-         line="Praca magisterska: porównanie algorytmów GA i PPO w uczeniu sieci neuronowych jazdy i parkowania.",
-         tech="Unity, Python"),
 ]
 
 SKILLS = [
