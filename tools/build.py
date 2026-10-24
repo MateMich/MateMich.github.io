@@ -326,7 +326,7 @@ SKILLS = [
     ("Języki", ["C# (.NET)", "C++", "SQL", "JavaScript", "HTML/CSS", "Python", "VBA", "Bash"]),
     ("Silniki i narzędzia", ["Unity", "Unreal Engine", "Unity Netcode", "Photon", "OpenXR", "LINQ", "REST API", "JSON", "Git", "Sourcetree", "TortoiseSVN"]),
     ("Bazy i systemy", ["SQLite", "Oracle", "Linux", "TCP/IP", "VPN", "Active Directory (podstawy)", "ITSM", "WMS"]),
-    ("AI programming", ["Claude Code", "ChatGPT", "Antigravity"]),
+    ("AI programming", ["Claude Code", "ChatGPT", "Antigravity", "MCP"]),
     ("Praca", ["SOLID, KISS, DRY", "wzorce projektowe", "Agile/Scrum", "Jira"]),
 ]
 
